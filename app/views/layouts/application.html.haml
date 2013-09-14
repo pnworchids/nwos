@@ -9,6 +9,10 @@
     %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge'}
     %meta{name: 'viewport', content:'width=device-width, initial-scale=1, user-scalable=no'}
 
+    %meta{name: "description", content: "The Northwest Orchid Society is a non-profit organization supporting Seattle orchid hobbyists, orchid conservation, education and scholarship."}
+    %meta{name: "keywords", content: "Seattle orchid society, orchids, orchid, society, conservation, cultivation, grow, plants, orchid show, orchid sale"}
+    %meta{name: "author", content: "Northwest Orchid Society"}
+
     -if content_for?(:opengraph)
       = yield :opengraph
     - else
