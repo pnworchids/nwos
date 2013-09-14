@@ -26,6 +26,10 @@ group :doc do
   gem 'sdoc', require: false					# bundle exec rake doc:rails generates the API under doc/api.
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # gem 'bcrypt-ruby', '~> 3.0.0'					# Use ActiveModel has_secure_password
 # gem 'unicorn'									# Use unicorn as the app server
 # gem 'capistrano', group: :development			# Use Capistrano for deployment
