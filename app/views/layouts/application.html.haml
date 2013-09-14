@@ -20,9 +20,9 @@
 
     %title 
       = full_title("NWOS", yield(:title))
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all"
     %link{href: "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", rel: "stylesheet"}
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
     %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
     = csrf_meta_tags
 
