@@ -1,0 +1,48 @@
+!!!
+%html
+  :plain
+    <!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+    <!--[if IE 7]><html class="lt-ie9 lt-ie8"><![endif]-->
+    <!--[if IE 8]><html class="lt-ie9"><![endif]-->
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge'}
+    %meta{name: 'viewport', content:'width=device-width, initial-scale=1, user-scalable=no'}
+
+    -if content_for?(:opengraph)
+      = yield :opengraph
+    - else
+      %meta{ property: 'og:type', content: 'website' }
+      %meta{ property: 'og:url', content: get_url(root_path) }
+      %meta{ property: 'og:title', content: "Northwest Orchid Society" }
+      %meta{ property: 'og:image', content: get_url('/assets/facebook_share.jpg') }
+      %meta{ property: 'og:description', content: ENV["FB_COPY"] }
+
+    %title 
+      = full_title("NWOS", yield(:title))
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    %link{href: "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", rel: "stylesheet"}
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
+    = csrf_meta_tags
+
+%body
+  %header.wrapper
+    %nav
+      %ul
+        %li
+          %a{href: "mailto:nwos@nwos.org"} Contact
+        %li
+          %a{href: "http://newsletter.nwos.org"} Newsletter
+        %li
+          %a.icon-facebook-sign.icon{href: 'https://www.facebook.com/nworchidsociety'}
+
+    = link_to(root_path) do
+      %h1
+        %span.first Northwest
+        %br
+        %span.last Orchid Society
+
+  .wrapper.main
+    .content-wrapper
+      = yield

@@ -1,0 +1,55 @@
+-provide :opengraph do
+  %meta{ property: 'og:type', content: 'website' }
+  %meta{ property: 'og:url', content: get_url(root_path) }
+  %meta{ property: 'og:title', content: "Northwest Orchid Society's Fall Orchid Festival" }
+  %meta{ property: 'og:image', content: get_url('/assets/facebook_share.jpg') }
+  %meta{ property: 'og:description', content: "Join us for our Fall Orchid Festival at Swanson's Nursery, Nov 9th-10th, featuring specialty vendors, an orchid display, talks, a repotting service, and more. " }
+
+%h2 
+  The 2013
+  %br
+  %span Fall Orchid Festival
+
+.when 
+  .half
+    Saturday, November 9th
+    %br
+    9:00am - 6:00pm
+
+  .amp &amp;
+
+  .half
+    Sunday, November 10th
+    %br
+    9:00am - 4:00pm
+
+.where
+  %p.address
+    %a.address-title{href: 'http://swansonsnursery.com/', target: '_blank'} Swanson's Nursery
+    %br
+    9701 15th Ave. NW, Seattle
+
+  .box-container
+    #map_canvas
+
+    %p 
+      %a{href: 'https://maps.google.com/maps?ie=UTF-8&gl=us&glp=1&daddr=9701+15th+Ave+NW,+Seattle,+WA+98117&panel=1&f=d&fb=1&dirflg=d&geocode=%3BKcPw3OOQFpBUMd46FJ_Os1Tj', target: '_blank'} 
+        Get Directions
+        %i.icon-arrow-right
+
+%ul.details-list
+  %li Specialty Vendors
+  %li Orchid Display
+  %li Talks
+  %li Repotting Service
+
+.share
+  %p.half
+    %a.social-media-button.facebook{href: construct_fb_share(root_path), target: "_blank"} 
+      %i.icon-facebook
+      Share on Facebook
+
+  %p.half
+    %a.social-media-button.twitter{href: construct_tweet(root_path, "Check out the Fall Orchid Festival at Swanson's Nursey, Nov 9th-10th."), target: "_blank"} 
+      %i.icon-twitter
+      Share on Twitter

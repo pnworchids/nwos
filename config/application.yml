@@ -1,0 +1,7 @@
+DEV_MODE: 'true'
+
+DOMAIN_URL: 'www.nwos.org'
+HEROKU_URL: 'nwos.herokuapp.com'
+
+FB_APP_ID: '415952488504760'
+FB_COPY: "We love growing Orchids. Come join us for our educational monthly meeting on how to frow these exotic plants. Vist our website to learn more."
