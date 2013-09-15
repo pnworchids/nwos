@@ -28,6 +28,8 @@
     %link{href: "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", rel: "stylesheet"}
     = javascript_include_tag "application"
     %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
+    /[if (lt IE 9)]
+      %script{src: "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
     = csrf_meta_tags
 
 %body
