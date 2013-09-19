@@ -26,11 +26,7 @@ module ApplicationHelper
   end
 
   def get_url(path = "")
-    if ENV['DEV_MODE'] = 'true'
-      return request.protocol+ENV['HEROKU_URL']+path.to_s
-    else
-      return request.protocol+ENV['DOMAIN_URL']+path.to_s
-    end
+    return request.protocol+ENV['DOMAIN_URL']+path.to_s
   end
 
   # builds link for Facebook Send Dialog (not to be confused with Facebook Send button)
