@@ -1,2 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Montserrat:400,700);
+
 @import 'normalize';
-@import 'landing';
+@import 'mixins';
+@import 'mobile/landing';
+
+// Media queries will not be picked up by ie8 and lower.
+// See ie8.scss
+@media all and (min-width: 769px) {
+    @import 'desktop/landing';
+}

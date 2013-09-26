@@ -1,0 +1,221 @@
+$lightest: #f9f8f5;
+$light: #f0efea;
+$medium: #e3e2dd;
+$dark: #6c6b65;
+$green: #6E8A41;
+$light-green: #8db153;
+
+//font-family: 'Sorts Mill Goudy', serif;
+//font-family: 'Montserrat', sans-serif;
+
+body {
+  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1em;
+  background: $light;
+  margin: 0;
+  border-top: 8px solid $medium;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  margin: 1.2em 0 0;
+  @include Clearfix;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.box-container {
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $lightest;
+}
+
+nav {
+  text-transform: uppercase;
+
+  ul {
+    list-style-type: none;
+    font-size: 0.9em;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    @include Clearfix;
+  }
+
+  li {
+    float: left;
+    vertical-align: middle;
+    margin-left: 1.6em;
+    padding-top: 0.35em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      float: right;
+      padding-top: 0;
+    }
+  }
+
+  a {
+    color: #888;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .icon {
+    font-size: 2em;
+  }
+}
+
+h1 {
+  font-family: 'Sorts Mill Goudy', serif;
+  text-transform: uppercase;
+  margin: -0.4em 0 1.8em;
+  width: auto;
+  color: #444;
+
+  background: transparent url(/assets/logo_graphic_only.png) 0 8px no-repeat;
+  min-height: 70px;
+  padding: 25px 11px 0 83px;
+  line-height: 1;
+  font-size: 1.05em;
+
+  .first {
+    font-size: 1.35em;
+  }
+}
+
+.main {
+  padding: 0.8em;
+  background-color: white;
+  background-color: rgba(255,255,255,0.4);
+  margin-bottom: 2em;
+
+  .content-wrapper {
+    background: #fefefe;
+    padding: 1em;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.2em;
+  color: $dark;
+  text-transform: uppercase;
+  -moz-text-shadow: 1px 3px $light;
+  -webkit-text-shadow: 1px 3px $light;
+  text-shadow: 1px 3px $light;
+
+  span {
+    font-size: 2em;
+    color: #9A2236;
+    text-shadow: 1px 3px #FF9340;
+  }
+}
+
+.when {
+  font-size: 1.2em;
+  margin: 2em auto;
+  @include Clearfix;
+  text-align: center;
+
+  .amp {
+    color: $medium;
+    font-size: 1.5em;
+  }
+}
+
+.where {
+  font-size: 0.9em;
+
+  p {
+    text-align: center;
+  }
+
+  .address {
+    font-size: 1.2em;
+  }
+
+  .address-title {
+    font-size: 1.35em;
+  }
+
+  a {
+    color: $green;
+
+    &:hover {
+      //text-decoration: underline;
+      color: $light-green;
+    }
+  }
+
+  .box-container {
+    max-width: 600px;
+    margin: 0 auto;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#map_canvas {
+  width: 100%;
+  height: 250px;
+  background-color: #ccc;
+}
+
+.details-list {
+  margin: 2em auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+
+  li {
+    margin: 0.5em 1em;
+  }
+}
+
+.share {
+  max-width: 400px;
+  margin: 2em auto;
+  @include Clearfix;
+  text-align: center;
+}
+
+.social-media-button {
+  color: white;
+  display: block;
+  padding: 0.8em 1em;
+  font-size: 0.9em;
+  line-height: 1;
+
+  &.facebook {
+    background-color: #3b5998;
+  }
+
+  &.twitter {
+    background-color: #00acee;
+  }
+
+  i {
+    padding-right: 0.5em;
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
+}

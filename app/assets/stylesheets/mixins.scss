@@ -1,0 +1,19 @@
+@mixin Clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin InlineBlock {
+  display: inline-block;
+  zoom:1;
+  *display:inline;
+}

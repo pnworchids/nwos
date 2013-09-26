@@ -1,0 +1,110 @@
+// Place all the styles related to the article controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$lightest: #f9f8f5;
+$light: #f0efea;
+$medium: #e3e2dd;
+$dark: #6c6b65;
+$green: #6E8A41;
+$light-green: #8db153;
+
+//font-family: 'Sorts Mill Goudy', serif;
+//font-family: 'Montserrat', sans-serif;
+
+.half {
+  width: 50%;
+  float: left;
+}
+
+nav {
+
+  ul {
+    font-size: 0.7em;
+    width: auto;
+    float: right;
+  }
+
+  li {
+    @include InlineBlock;
+    margin-left: 3em;
+    padding-top: 0;
+    vertical-align: bottom;
+    width: auto;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      width: auto;
+    }
+  }
+
+  a {
+    color: #888;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .icon {
+    font-size: 2em;
+  }
+}
+
+h1 {
+  padding: 20px 11px 0 83px;
+  font-size: 1.56em;
+  width: 243px;
+
+  .first {
+    font-size: 1.35em;
+  }
+}
+
+h2 {
+  font-size: 1.1em;
+
+  span {
+    font-size: 2.8em;
+  }
+}
+
+.when {
+  font-size: 1em;
+  max-width: 570px;
+  position:relative;
+
+  .amp {
+    position: absolute;
+    width: 3em;
+    left: 50%;
+    margin-left: -1.5em;
+    margin-top: -0.2em;
+    font-size: 3em;
+  }
+}
+
+.where {
+  font-size: 1em;
+}
+
+#map_canvas {
+  height: 350px;
+}
+
+.details-list {
+  margin: 2.5em auto;
+
+  li {
+    display: inline-block;
+    *display: inline;
+    margin: 0 1em;
+  }
+}
+
+.social-media-button {
+  @include InlineBlock;
+}
