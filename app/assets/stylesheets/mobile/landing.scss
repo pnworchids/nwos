@@ -1,13 +1,3 @@
-$lightest: #f9f8f5;
-$light: #f0efea;
-$medium: #e3e2dd;
-$dark: #6c6b65;
-$green: #6E8A41;
-$light-green: #8db153;
-
-//font-family: 'Sorts Mill Goudy', serif;
-//font-family: 'Montserrat', sans-serif;
-
 body {
   font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
   font-size: 1em;
@@ -43,12 +33,18 @@ header {
 
 nav {
   text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $medium;
 
   ul {
     list-style-type: none;
-    font-size: 0.9em;
-    margin-top: 0;
-    padding: 0;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0.5em 0.8em;
+    box-sizing: border-box;
     width: 100%;
     @include Clearfix;
   }
@@ -56,7 +52,7 @@ nav {
   li {
     float: left;
     vertical-align: middle;
-    margin-left: 1.6em;
+    margin-left: 2em;
     padding-top: 0.35em;
 
     &:first-child {
@@ -70,7 +66,7 @@ nav {
   }
 
   a {
-    color: #888;
+    color: #999;
 
     &:hover {
       color: $green;
@@ -85,18 +81,19 @@ nav {
 h1 {
   font-family: 'Sorts Mill Goudy', serif;
   text-transform: uppercase;
-  margin: -0.4em 0 1.8em;
+  margin: 1.2em 0 1.8em;
   width: auto;
-  color: #444;
+  color: #999;
 
-  background: transparent url(/assets/logo_graphic_only.png) 0 8px no-repeat;
-  min-height: 70px;
-  padding: 25px 11px 0 83px;
+  background: transparent url(/assets/logo_graphic_only_mobile.png) 0 8px no-repeat;
+  background-size: 60px;
+  min-height: 52px;
+  padding: 18px 11px 0 73px;
   line-height: 1;
-  font-size: 1.05em;
+  font-size: 1.2em;
 
-  .first {
-    font-size: 1.35em;
+  .top-line {
+    font-size: 1.3em;
   }
 }
 
@@ -193,7 +190,7 @@ h2 {
 
 .share {
   max-width: 400px;
-  margin: 2em auto;
+  margin: 2em auto 0;
   @include Clearfix;
   text-align: center;
 }

@@ -2,15 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$lightest: #f9f8f5;
-$light: #f0efea;
-$medium: #e3e2dd;
-$dark: #6c6b65;
-$green: #6E8A41;
-$light-green: #8db153;
+.main {
+  position: relative;
+}
 
-//font-family: 'Sorts Mill Goudy', serif;
-//font-family: 'Montserrat', sans-serif;
+@media all and (min-width: 1000px) {
+  .background-graphic {
+    background: transparent url(../assets/bg_graphic.png) 0 0 no-repeat;
+    width: 321px;
+    height: 553px;
+    position: absolute;
+    right: -260px;
+    top: 50%;
+    margin-top: -300px;
+    z-index: 9999;
+
+    &.reflected {
+      background-image: url(../assets/bg_graphic_reflected.png);
+      left: -260px;
+    }
+  }
+}
 
 .half {
   width: 50%;
@@ -18,11 +30,14 @@ $light-green: #8db153;
 }
 
 nav {
+  position: inherit;
+  width: auto;
 
   ul {
     font-size: 0.7em;
     width: auto;
     float: right;
+    padding: 0;
   }
 
   li {
@@ -41,25 +56,22 @@ nav {
     }
   }
 
-  a {
-    color: #888;
-
-    &:hover {
-      color: $green;
-    }
-  }
-
   .icon {
     font-size: 2em;
   }
 }
 
 h1 {
-  padding: 20px 11px 0 83px;
-  font-size: 1.56em;
   width: 243px;
 
-  .first {
+  background: transparent url(/assets/logo_graphic_only.png) 0 8px no-repeat;
+  min-height: 70px;
+  padding: 20px 11px 0 83px;
+  margin: -0.4em 0 1.8em;
+  line-height: 1;
+  font-size: 1.56em;
+
+  .top-line {
     font-size: 1.35em;
   }
 }
@@ -103,6 +115,10 @@ h2 {
     *display: inline;
     margin: 0 1em;
   }
+}
+
+.share {
+  margin: 2em auto;
 }
 
 .social-media-button {
