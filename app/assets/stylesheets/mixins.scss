@@ -1,6 +1,8 @@
-$lightest: #f9f8f5;
-$light: #f0e9db;
+$light1: #fcfcfa;
+$light2: #f9f8f5;
+$light3: #ebe4d5; //#d9d4ca; //#f0e9db;
 $medium: #d9d5cd;
+$medium2: #a6a197;
 $dark: #6c6b65;
 $green: #6E8A41;
 $light-green: #8db153;
@@ -27,4 +29,10 @@ $light-green: #8db153;
   display: inline-block;
   zoom:1;
   *display:inline;
+}
+
+@mixin TextShadow($args) {
+  -webkit-text-shadow: $args;
+     -moz-text-shadow: $args;
+          text-shadow: $args;
 }

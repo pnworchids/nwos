@@ -8,51 +8,159 @@
 .background-graphic
 .background-graphic.reflected
 
-%h2 
-  The 2013
-  %br
-  %span Fall Orchid Festival
-
-.when 
-  .half
-    Saturday, November 9th
+.content-wrapper.border-bottom.light2
+  %h2
+    The 2013
     %br
-    9:00am - 6:00pm
+    %span Fall Orchid Festival
 
-  .amp &amp;
+  .when
+    .holiday
+      %span.holiday-title Swanson's Holiday Kickoff
+      %br
+      Friday, November 8th
+      %br
+      5:00pm - 8:00pm
 
-  .half
-    Sunday, November 10th
-    %br
-    9:00am - 4:00pm
+    .half
+      Saturday, November 9th
+      %br
+      9:00am - 6:00pm
 
-.where
-  %p.address
-    %a.address-title{href: 'http://swansonsnursery.com/', target: '_blank'} Swanson's Nursery
-    %br
-    9701 15th Ave. NW, Seattle
+    .amp &amp;
 
-  .box-container
-    #map_canvas
+    .half
+      Sunday, November 10th
+      %br
+      9:00am - 4:00pm
+
+  .where.content-container
+    %p.address
+      %a.address-title{href: 'http://swansonsnursery.com/', target: '_blank'} Swanson's Nursery
+      %br
+      9701 15th Ave. NW, Seattle
+
+    .box-container
+      #map_canvas
+
+      %p 
+        %a{href: 'https://maps.google.com/maps?ie=UTF-8&gl=us&glp=1&daddr=9701+15th+Ave+NW,+Seattle,+WA+98117&panel=1&f=d&fb=1&dirflg=d&geocode=%3BKcPw3OOQFpBUMd46FJ_Os1Tj', target: '_blank'} 
+          Get Directions
+          %i.icon-arrow-right
+
+.content-wrapper.border-bottom.light1
+  .content-container#highlights
+    %h3 Highlights
+
+    %ul.details-list
+      %li 
+        Large display of fall blooming orchids
+      %li 
+        Orchid repotting service (free - donations are gladly accepted)
+      %li 
+        %a{href:'#talks'}Talks
+        on the hour
+      %li 
+        Specialty orchid 
+        %a{href:'#vendors'}vendors
+        plus orchids from the collections of Northwest Orchid Society members
+      %li 
+        American Orchid Society 2014 calendars
+      %li 
+        Orchid books and supplies
+
+.content-wrapper.border-bottom
+  .content-container#talks
+    %h3 Talks
 
     %p 
-      %a{href: 'https://maps.google.com/maps?ie=UTF-8&gl=us&glp=1&daddr=9701+15th+Ave+NW,+Seattle,+WA+98117&panel=1&f=d&fb=1&dirflg=d&geocode=%3BKcPw3OOQFpBUMd46FJ_Os1Tj', target: '_blank'} 
-        Get Directions
-        %i.icon-arrow-right
+      Saturday, &nbsp; 10 am &#151; 4 pm
+      %br
+      Sunday, &nbsp; 10 am &#151; 3 pm
 
-%ul.details-list
-  %li Specialty Vendors
-  %li Orchid Display
-  %li Talks
-  %li Repotting Service
+    %p More details to be announced.
 
-.share
-  %p.half
-    %a.social-media-button.facebook{href: construct_fb_share(root_path), target: "_blank"} 
-      %i.icon-facebook
-      Share on Facebook
+.content-wrapper.border-bottom.light1
+  .content-container#vendors
+    %h3 Vendors
 
-  %p.half
-    %a.social-media-button.twitter{href: construct_tweet(root_path, "Check out the Fall Orchid Festival at Swanson's Nursey, Nov 9th-10th."), target: "_blank"} 
-      %i.icon-twitter
-      Share on Twitter
+    %ul.vendors-list
+      %li
+        %h4 
+          %a{href:'http://stores.ebay.com/Lucky-Girl-Orchids/'} Lucky Girl
+        %p.location Rathdrum, Idaho
+
+        %ul
+          %li Phragmepedium hybrids
+          %li Phragmepedium kovachii hybrids
+          %li Paphiopedilum species including some specially imported from China including helenae, purpuratum, tigrinum and tranlienianum  
+          %li Paphiopedilum hybrids in spike/bloom
+          %li Cattleyas in spike/bloom
+          %li Cattleya/Laelia species
+          %li Masdevallias in spike/bloom
+          %li Bulbophyllum species and hybrids
+          %li Eria species
+          %li Chinese Cymbidium species (coming from China as well)
+          %li Intergeneric Oncidiums in spike/bloom
+          %li Various species, some in spike
+
+      %li 
+        %h4 
+          %a{href:'http://www.seattleorchid.com'} Seattle Orchid
+        %p.location Seattle
+          
+        %ul
+          %li Extensive variety of species, mounted and potted
+          %li Cattleya, Zygopetalum, Oncidium Sharry Baby, Paphiopedilum, Miltonia
+
+      %li
+        %h4 
+          %a{href:'http://www.orchidscents.com'} Olympic Orchids
+
+        %ul
+          %li Species
+          %li Seedlings
+          %li Miniature orchids
+          %li Mounted orchids
+          %li Sphagnum moss
+          %li Cork mounts
+          %li Other supplies
+          %li Orchid mounting service
+          %li Olympic Orchids perfumes
+
+      %li
+        %h4 
+          %a{href:'http://emeraldcityorchids.com'} Emerald City Orchids
+        %p.location Seattle
+
+        %ul
+          %li Details coming soon.
+
+.content-wrapper.border-bottom.light2
+  .content-container#offer
+    %h3 Special Offer for New Memebership
+
+    %p.bigger
+      If you've never been a member of the Northwest Orchid Society, join during the sale and receive a
+      %span.highlight $10 coupon
+      to use towards any purchase at the sale*
+
+    %p
+      NWOS membership benefits include an orchid for those who attend the December meeting, excellent programs with knowledgeable speakers, and the camaraderie of fellow orchid enthusiasts.
+
+    %p
+      The NWOS is a regional organization with members throughout the Puget Sound area. It meets the second Monday of every month at 7 pm from September through June at the Center for Urban Horticulture (near University Village: 3501 NE 41st St., Seattle).
+
+    %p.smaller * Not good elsewhere at Swanson’s.
+
+.content-wrapper.light3
+  .share
+    %p.half
+      %a.social-media-button.facebook{href: construct_fb_share(root_path), target: "_blank"} 
+        %i.icon-facebook
+        Share on Facebook
+
+    %p.half
+      %a.social-media-button.twitter{href: construct_tweet(root_path, "Check out the Fall Orchid Festival at Swanson's Nursey, Nov 9th-10th."), target: "_blank"} 
+        %i.icon-twitter
+        Share on Twitter
