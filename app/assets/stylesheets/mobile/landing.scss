@@ -136,7 +136,7 @@ h2 {
 
   position: relative;
   padding: 1em 0.8em;
-  background-color: #e5dfcf;
+  background-color: #e5d9b8;
   width: 100%;
   margin-left: -0.8em;
 
@@ -160,7 +160,7 @@ h2 {
     top: 100%;
     border-width: 0.45em;
     border-style: solid;
-    border-color: $medium2 $medium2 transparent transparent;
+    border-color: #a69b86 #a69b86 transparent transparent;
   }
 
   &:after {
@@ -168,7 +168,7 @@ h2 {
     top: 100%;
     border-width: 0.45em;
     border-style: solid;
-    border-color: $medium2 transparent transparent $medium2;
+    border-color: #a69b86 transparent transparent #a69b86;
   }
 }
 
