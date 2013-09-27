@@ -3,8 +3,8 @@ body {
   font-size: 1em;
   background: $light3;
   margin: 0;
-  border-top: 8px solid $medium;
   color: #444;
+  overflow-x:hidden;
 }
 
 a {
@@ -17,8 +17,8 @@ a {
 }
 
 header {
-  margin: 1.2em 0 0;
-  @include Clearfix;
+  margin-bottom: 1em;
+  background-color: $medium;
 }
 
 .wrapper {
@@ -31,11 +31,7 @@ header {
 
 nav {
   text-transform: uppercase;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  background-color: $medium;
 
   ul {
     list-style-type: none;
@@ -44,11 +40,11 @@ nav {
     padding: 0.5em 0.8em;
     box-sizing: border-box;
     width: 100%;
-    @include Clearfix;
+    text-align: right;
   }
 
   li {
-    float: left;
+    @include InlineBlock;
     vertical-align: middle;
     margin-left: 2em;
     padding-top: 0.35em;
@@ -58,7 +54,7 @@ nav {
     }
 
     &:last-child {
-      float: right;
+      //float: right;
       padding-top: 0;
     }
   }
@@ -77,22 +73,7 @@ nav {
 }
 
 h1 {
-  font-family: 'Sorts Mill Goudy', serif;
-  text-transform: uppercase;
-  margin: 1.2em auto 1.8em;
-  width: 160px;
-  color: $medium2;
-
-  background: transparent url(/assets/logo_graphic_only_mobile.png) 0 8px no-repeat;
-  background-size: 50px;
-  padding: 18px 11px 0 60px;
-  min-height: 44px;
-  line-height: 1;
-  font-size: 1em;
-
-  .top-line {
-    font-size: 1.4em;
-  }
+  @include HideElement;
 }
 
 .main {
@@ -130,8 +111,8 @@ h1 {
 .content-container {
   max-width: 600px;
   margin: 1em auto;
-  padding-left: 0.8em;
-  padding-right: 0.8em;
+  //padding-left: 0.8em;
+  //padding-right: 0.8em;
 }
 
 .box-container {
@@ -141,23 +122,59 @@ h1 {
   background-color: #fefefe;
 }
 
+.heading {
+  padding-top: 1em;
+}
+
 h2 {
   text-align: center;
   font-size: 1.2em;
   color: $dark;
   text-transform: uppercase;
-  @include TextShadow(1px 3px $light3);
+  @include TextShadow(1px 3px $medium);
+  margin: 0;
+
+  position: relative;
+  padding: 1em 0.8em;
+  background-color: #e5dfcf;
+  width: 100%;
+  margin-left: -0.8em;
 
   span {
     font-size: 2em;
-    color: #9A2236;
+    line-height: 1;
+    color: #ffa664; //#9A2236;
     text-shadow: 1px 3px #FF9340;
+  }
+
+  //curled back ribbon piece
+  &:before, &:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  &:before {
+    left: 0;
+    top: 100%;
+    border-width: 0.45em;
+    border-style: solid;
+    border-color: $medium2 $medium2 transparent transparent;
+  }
+
+  &:after {
+    right: 0;
+    top: 100%;
+    border-width: 0.45em;
+    border-style: solid;
+    border-color: $medium2 transparent transparent $medium2;
   }
 }
 
 .when {
   font-size: 1.2em;
-  margin: 2em auto;
+  margin: 1em auto;
   @include Clearfix;
   text-align: center;
 
@@ -189,7 +206,7 @@ h2 {
 
   .address-title {
     text-transform: uppercase;
-    font-size: 1.35em;
+    font-size: 1.3em;
   }
 
   .box-container {

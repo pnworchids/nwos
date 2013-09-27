@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  border-top: 8px solid $medium;
+}
+
 .wrapper {
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -27,8 +31,13 @@
   float: left;
 }
 
+header {
+  margin: 1.2em 0 0;
+  background: transparent;
+  @include Clearfix;
+}
+
 nav {
-  position: inherit;
   width: auto;
 
   ul {
@@ -36,6 +45,7 @@ nav {
     width: auto;
     float: right;
     padding: 0;
+    margin: 0;
   }
 
   li {
@@ -70,6 +80,10 @@ nav {
 }
 
 h1 {
+  @include UnhideElement;
+  font-family: 'Sorts Mill Goudy', serif;
+  text-transform: uppercase;
+  color: $medium2;
   width: auto;
   max-width: 243px;
 
@@ -85,11 +99,45 @@ h1 {
   }
 }
 
+.heading {
+  position: relative;
+  height: 120px;
+
+  &:before, &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  &:before {
+    border-width: 50px 30px;
+    border-style: solid;
+    border-color: #dbd5c5 #dbd5c5 #dbd5c5 transparent;
+    left: -60px;
+    bottom: -20px;
+  }
+
+  &:after {
+    border-width: 50px 30px;
+    border-style: solid;
+    border-color: #dbd5c5 transparent #dbd5c5 #dbd5c5;
+    right: -60px;
+    bottom: -20px;
+  }
+}
+
 h2 {
   font-size: 1.1em;
 
+  position: absolute;
+  padding: 1.5em 0.8em;
+  margin-top: 0;
+  z-index: 9999;
+
   span {
-    font-size: 2.8em;
+    font-size: 2.9em;
   }
 }
 
@@ -115,6 +163,10 @@ h2 {
 
 .where {
   font-size: 1em;
+
+  .address-title {
+    font-size: 1.35em;
+  }
 }
 
 #map_canvas {

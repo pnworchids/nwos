@@ -31,8 +31,67 @@ $light-green: #8db153;
   *display:inline;
 }
 
+//Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin HideElement {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
+
+@mixin Focusable {
+  &:active, :focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+//STOP Hiding visually, provide an optional position to reset from absolute
+//Need to add your own reset for sizing, etc.
+@mixin UnhideElement($position: static, $w: auto, $h: auto) {
+  position: $position;
+  clip: auto;
+  width: $w;
+  height: $h;
+}
+
 @mixin TextShadow($args) {
   -webkit-text-shadow: $args;
      -moz-text-shadow: $args;
           text-shadow: $args;
+}
+
+@mixin BorderArrow($direction, $color, $size: 5px, $height: $size) {
+  width: 0; 
+  height: 0;
+
+  @if $direction == 'up' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $height solid $color;
+  }
+  @if $direction == 'down' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $height solid $color;
+  }
+  @if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent; 
+    border-right: $height solid $color; 
+  }
+  @if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent; 
+    border-left: $height solid $color; 
+  }
 }
