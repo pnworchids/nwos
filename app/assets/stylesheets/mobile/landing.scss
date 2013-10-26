@@ -244,6 +244,41 @@ h3 {
   }
 }
 
+.talks-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: $green;
+}
+
+.talks-table {
+  display: block;
+
+  tr, td {
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 1em;
+  }
+
+  td {
+    margin-bottom: 0.25em;
+  }
+
+  .talk-time {
+    color: $green;
+  }
+
+  .talk-speaker {
+    color: $dark;
+  }
+
+  .talk-speaker,
+  .talk-topic {
+    font-size: 0.9em;
+  }
+}
+
 .vendors-list {
   list-style-type: none;
   padding: 0;

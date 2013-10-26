@@ -175,6 +175,45 @@ h2 {
   height: 350px;
 }
 
+.talks-table {
+  display: table;
+  width: 100%;
+  border-spacing:0;
+  border-collapse:collapse;
+  font-size: 0.9em;
+  margin-bottom: 3em;
+
+  tr {
+    display: table-row;
+  }
+
+  td {
+    display: table-cell;
+    vertical-align: top;
+    padding: 1em 1.2em;
+    background-color: $light1;
+  }
+
+  tr:nth-child(even) {
+    td {
+      background-color: $light2;
+    }
+  }
+
+  .talk-time {
+    //color: #444;
+    width: 20%;
+  }
+
+  .talk-speaker {
+    width: 30%;
+  }
+
+  .talk-topic {
+    width: 50%;
+  }
+}
+
 .share {
   margin: 1em auto;
 }
