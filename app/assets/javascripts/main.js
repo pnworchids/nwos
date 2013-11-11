@@ -2,7 +2,7 @@
     $(document).ready(function() {
 
         function initialize() {
-            var LatLong = new google.maps.LatLng(47.700256, -122.377658);
+            var LatLong = new google.maps.LatLng(47.657987, -122.290565);
             var mapCanvas = document.getElementById('map_canvas');
             var mapOptions = {
                 center: LatLong,
@@ -15,7 +15,7 @@
             var marker = new google.maps.Marker({
                 position: LatLong,
                 map: map,
-                title: "Swanson's Nursery"
+                title: "University of Washington Botanic Gardens, Center for Urban Horticulture"
             });
         }
 

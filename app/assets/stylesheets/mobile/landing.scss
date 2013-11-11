@@ -126,7 +126,7 @@ h1 {
   padding-top: 1em;
 }
 
-h2 {
+h2.ribbon {
   text-align: center;
   font-size: 1.2em;
   color: white;
@@ -227,11 +227,28 @@ h2 {
   background-color: #ccc;
 }
 
-h3 {
-  color: $red;
+.page-header {
+  font-size: 2.5em;
+  margin: 0 0 0.4em;
+  @include TextShadow(1px 3px $light3);
+}
+
+.section-header {
   font-size: 1.8em;
   margin: 0 0 1em;
   @include TextShadow(1px 3px $light3);
+}
+
+.page-header,
+.section-header {
+  &.red {
+    color: $red;
+  }
+
+  &.green {
+    color: $green;
+    background-color: transparent;
+  }
 }
 
 .details-list {
@@ -366,5 +383,80 @@ h3 {
     padding-right: 0.5em;
     font-size: 1.5em;
     vertical-align: middle;
+  }
+}
+
+/* TEMP LANDING */
+#about, #membership, #contact, #headline {
+  p {
+    line-height: 1.5;
+    margin: 0 0 1em;
+  }
+}
+
+#headline {
+  background-color: $light2;
+  position: relative;
+
+  img {
+    display: none;
+  }
+}
+
+#membership {
+  ul {
+    margin: 2em 0;
+    padding-left: 20px;
+    color: $green;
+
+    li {
+      margin-bottom: 1.2em;
+    }
+
+    p {
+      color: #444;;
+    }
+
+    .get-directions-link {
+      margin: 1em 0 0;
+    }
+  }
+
+  h3 {
+    margin: 0 0 0.2em;
+    font-size: 1em;
+  }
+
+  #map_canvas {
+
+  }
+}
+
+form {
+  label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: $medium2;
+    margin-bottom: 0.3em;
+  }
+
+  select {
+    margin-right: 1em;
+  }
+}
+
+.paypal-button-container {
+  display: table;
+
+  div {
+    display: table-cell;
+    vertical-align:middle;
+  }
+}
+
+#contact {
+  i {
+    margin-right: 0.2em;
   }
 }

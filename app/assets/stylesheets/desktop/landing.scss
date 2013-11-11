@@ -130,7 +130,7 @@ h1 {
   }
 }
 
-h2 {
+h2.ribbon {
   font-size: 1.1em;
 
   position: absolute;
@@ -220,4 +220,44 @@ h2 {
 
 .social-media-button {
   @include InlineBlock;
+}
+
+/* TEMP LANDING */
+
+#headline {
+  padding: 0;
+  border: 1em solid white;
+
+  img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -104px;
+    left: 74%;
+    width: auto;
+    height: auto;
+  }
+
+  p {
+    width: 81%;
+  }
+}
+
+.contact-container {
+  overflow: hidden;
+  margin: 2em 0;
+
+  p {
+    float: left;
+    margin: 0;
+
+    &.first {
+      width: 50%;
+    }
+    
+    &.last {
+      padding-left: 2.5em;
+      border-left: 1px dotted $medium;
+    }
+  }
 }
