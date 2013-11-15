@@ -60,7 +60,7 @@ nav {
   }
 
   a {
-    color: $medium2;
+    color: $dark;
 
     &:hover {
       color: $green;
@@ -72,7 +72,7 @@ nav {
   }
 }
 
-h1 {
+.logo-header {
   @include HideElement;
 }
 

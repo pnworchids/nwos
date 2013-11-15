@@ -52,11 +52,8 @@
         %li
           %a.icon-facebook-sign.icon{href: 'https://www.facebook.com/nworchidsociety'}
 
-    = link_to(root_path) do
-      %h1
-        %span.top-line Northwest
-        %br
-        %span.bottom-line Orchid Society
+    = link_to root_path, class: 'logo-header' do
+      %h1 Northwest Orchid Society
 
   .wrapper.main
     = yield

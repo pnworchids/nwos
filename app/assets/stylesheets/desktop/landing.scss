@@ -6,11 +6,6 @@ body {
   border-top: 8px solid #d3ccbf;
 }
 
-.wrapper {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-}
-
 .background-graphic {
   background: transparent url(../assets/bg_graphic.png) 0 0 no-repeat;
   width: 321px;
@@ -32,7 +27,7 @@ body {
 }
 
 header {
-  margin: 1.2em 0 0;
+  margin: 1.2em 0 2em;
   background: transparent;
   @include Clearfix;
 }
@@ -41,7 +36,7 @@ nav {
   width: auto;
 
   ul {
-    font-size: 0.7em;
+    font-size: 0.75em;
     width: auto;
     float: right;
     padding: 0;
@@ -79,23 +74,19 @@ nav {
   padding-right: 0;
 }
 
-h1 {
-  @include UnhideElement;
-  font-family: 'Sorts Mill Goudy', serif;
-  text-transform: uppercase;
-  color: $medium2;
-  width: auto;
-  max-width: 243px;
+.logo-header {
+  @include UnhideElement(relative);
+  display: block;
+  width: 242px;
+  //padding: 0.8em;
+  //margin: 0 0 0 -0.8em;
+  //background-color: rgba(255, 255, 255, 0.3);
 
-  background: transparent url(/assets/logo_graphic_only.png) 0 8px no-repeat;
-  padding: 20px 11px 0 65px;
-  margin: -17px 0 1.8em;
-  min-height: 48px;
-  line-height: 1;
-  font-size: 1em;
-
-  .top-line {
-    font-size: 1.35em;
+  h1 {
+    @include ImageReplacement;
+    background: transparent url(/assets/logo.png) 0 0 no-repeat;
+    height: 60px;
+    margin: 0;
   }
 }
 
