@@ -18,11 +18,28 @@ module ApplicationHelper
     str.gsub(/[^0-9a-z ]/i, '').gsub(/\s+/, '-').downcase
   end
 
-  def get_list_item_classes(i, arr)
+  def get_item_class(i, arr)
     klasses = i % 2 == 0 ? 'odd ' : 'even '
     klasses << 'first ' if i < 1
     klasses << 'last ' if i+1 == arr.length
     return klasses
+  end
+
+  def get_column_clear_class(i, column_num)
+    # if multiple values are provided
+    if column_num.kind_of?(Array)
+      # check equation against each value
+      klasses = ''
+      column_num.each do |val|
+        if i % val == 0
+          klasses << ' first-of-'+val.to_s
+        end
+      end
+      return klasses
+    # otherwise just calculate for single value
+    elsif i % column_num == 0
+      return 'first-of-'+column_num.to_s
+    end
   end
 
   def get_url(path = "")
@@ -34,7 +51,7 @@ module ApplicationHelper
     return "https://www.facebook.com/dialog/send?app_id="+ENV['FB_APP_ID']+"&link="+get_url(path)+"&redirect_uri="+get_url(path)
   end
 
-  # builds link for Custom Tweet button
+  # builds link for Custom Share button
   def construct_fb_share(path = "")
     return "https://www.facebook.com/sharer/sharer.php?u="+get_url(path).to_s
   end
