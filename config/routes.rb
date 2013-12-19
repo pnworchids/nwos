@@ -1,5 +1,7 @@
 NwosWeb::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   #get '/about', to: 'static_pages#about'
 
   root to: 'pages#home'

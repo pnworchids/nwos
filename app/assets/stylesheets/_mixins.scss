@@ -1,0 +1,137 @@
+$light1: #fcfcfa;
+$light2: #f9f8f5;
+$light3: #ebe4d5; //#d9d4ca; //#f0e9db;
+$medium: #d9d5cd;
+$medium2: #a6a197;
+$dark: #6c6b65;
+$green: #6E8A41;
+$light-green: #8db153;
+$red: #AD2835; //#9A2236;
+
+//font-family: 'Sorts Mill Goudy', serif;
+//font-family: 'Montserrat', sans-serif;
+
+@mixin ImageReplacement {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+}
+
+@mixin Hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+@mixin VisuallyHidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin Focusable {
+  &:active,
+  &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+  }
+}
+
+//STOP Hiding visually, provide an optional position to reset from absolute
+//Need to add your own reset for sizing, etc.
+@mixin Unhidden($position: static, $w: auto, $h: auto) {
+  position: $position;
+  clip: auto;
+  width: $w;
+  height: $h;
+}
+
+@mixin Clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin InlineBlock {
+  display: inline-block;
+  *zoom:1;
+  *display:inline;
+}
+
+/*
+ *  Progressive enhancement mixins
+ */
+
+@mixin TextShadow($args) {
+  -webkit-text-shadow: $args;
+     -moz-text-shadow: $args;
+          text-shadow: $args;
+}
+
+@mixin Opacity($value: 0.5) {
+  -webkit-opacity: $value;
+     -moz-opacity: $value;
+          opacity: $value;
+
+  $msvalue: $value*100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$msvalue)";
+      filter: alpha(opacity=$msvalue);
+  *zoom: 1;
+}
+
+@mixin BoxSizing($value: border-box){
+  -webkit-box-sizing: $value;
+     -moz-box-sizing: $value;
+          box-sizing: $value;
+}
+
+@mixin Shadow($value){
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+          box-shadow: $value; 
+}
+
+@mixin BorderRadius($value: 3px) {
+  -webkit-border-radius: $value;
+     -moz-border-radius: $value;
+          border-radius: $value;
+}
+
+@mixin BackgroundClip($value) {
+  // keeps background from busting out of border 
+  -webkit-background-clip: $value;
+     -moz-background-clip: $value;
+          background-clip: $value+"-box";
+}
+
+@mixin Transition($value){
+  -webkit-transition: $value;
+     -moz-transition: $value;
+       -o-transition: $value;
+          transition: $value;
+}

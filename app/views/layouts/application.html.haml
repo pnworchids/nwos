@@ -25,7 +25,6 @@
     %title 
       = full_title("NWOS", yield(:title))
     = stylesheet_link_tag "application", media: "all"
-    %link{href: "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", rel: "stylesheet"}
     = javascript_include_tag "application"
     %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
     /[if (lt IE 9)]
@@ -42,18 +41,25 @@
       ga('send', 'pageview');
 
 %body
-  %header.wrapper
-    %nav
-      %ul
-        %li
-          %a{href: "#contact"} Contact
-        %li
-          %a{href: "http://newsletter.nwos.org"} Newsletter
-        %li
-          %a.icon-facebook-sign.icon{href: 'https://www.facebook.com/nworchidsociety'}
+  %nav.navbar
+    .navbar-header
+      .container
+        %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
+          %i.fa.fa-bars.fa-lg
+    .navbar-collapse.collapse
+      .container
+        %ul
+          %li
+            %a{href: "#contact"} Contact
+          %li
+            %a{href: "http://newsletter.nwos.org"} Newsletter
+          %li
+            %a{href: 'https://www.facebook.com/nworchidsociety'}
+              %i.fa.fa-facebook
 
+  %header.container
     = link_to root_path, class: 'logo-header' do
       %h1 Northwest Orchid Society
 
-  .wrapper.main
+  .container
     = yield
