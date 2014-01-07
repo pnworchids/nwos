@@ -1,0 +1,58 @@
+-provide(:title, 'Contact')
+
+.container.page-main-content
+  %section
+    %h2.section-header Contact Us
+
+    %form
+      .field.required
+        %label Send To:
+        %select
+          %option{value: "nwos@nwos.org"} General Inquiries
+          %option{value: "publicity@nwos.org"} Publicity
+          %option{value: "webmaster@nwos.org"} Webmaster
+          %option{value: "newsletter@nwos.org"} Newsletter Editor
+          %option{value: "president@nwos.org"} President
+
+      .field.required
+        %input{type: "text", placeholder: "Name"}
+
+      .field.required.email
+        %input{type: "text", placeholder: "Email Address"}
+
+      .field.required.phone
+        %input{type: "text", placeholder: "Phone Number"}
+
+      .field.required
+        %textarea{placeholder: "Your message"}
+
+      %input{type: "submit", value: "Send"}
+
+  %section
+    %h2.section-header General Contact Information
+
+    Email:
+    %a{href: "mailto:nwos@nwos.org"} nwos@nwos.org
+
+    %br
+
+    Phone:
+    %a{href: "http://tel:+2067815805"} (206) 781-5805
+
+    %h3 Meeting Location
+    %p
+      University of Washington Botanical Gardens
+      %br
+      Center for Urban Horticulture 
+      %br
+      3501 NE 41st Street 
+      %br
+      Seattle, WA 98105
+
+    %h3 Mailing Address
+    %p
+      Northwest Orchid Society
+      %br
+      PO Box 51021
+      %br 
+      Seattle, WA 98115-1021

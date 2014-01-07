@@ -1,0 +1,29 @@
+.home-featured {
+  position: relative;
+  background-color: $standard-black;
+  overflow: hidden;
+
+  .home-featured-content-container {
+    color: white;
+
+    .home-featured-content {
+      padding: 1em 0;
+
+      .home-featured-heading {
+        margin: 0 0 0.2em;
+        font-size: 1.2em;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .home-featured-bg {
+    width: 100%;
+    height: auto;
+  }
+}

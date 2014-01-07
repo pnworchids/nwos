@@ -2,7 +2,10 @@ NwosWeb::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  #get '/about', to: 'static_pages#about'
+
+  get '/membership', to: 'pages#membership'
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
 
   root to: 'pages#home'
 

@@ -1,111 +1,22 @@
-.content-wrapper#headline
-  .content-container
-    %img{src: 'assets/cymbidium.png'}
-    %h2.page-header.red Thank You from NWOS
-    %p We would like to thank everyone for an outstanding turn out at our Fall Orchid Festival. Not only does your support help the society with public outreach about orchid culture and conservation, but it also makes for a fun and exciting event. Thank you again!
+%section.home-featured
+  .home-featured-content-container
+    .container
+      .home-featured-content
+        %h2.home-featured-heading 
+          %span.lg-1_5x Thank You 
+          %br
+          from NWOS
+        %p We would like to thank everyone for an outstanding turn out at our Fall Orchid Festival. Not only does your support help the society with public outreach about orchid culture and conservation, but it also makes for a fun and exciting event. Thank you again!
+  %img.home-featured-bg{src: 'assets/placeholder.jpg'}
 
-.content-wrapper.border-bottom
-  .content-container#about
-    %h2.section-header.green About the Society
+.container.page-main-content
+  %section.about-us
+    %h2 Our Society
+    %p 
+      We are an active society made up of a diverse group who all share a fasination with Orchids. What to learn about Orchids? What better way?
+      %a{href: ""} Learn More
 
-    %p The Northwest Orchid Society was founded in 1947 with the goal of creating a community for orchid growers, and promoting and educating people about this rewarding hobby. We welcome both beginner and experienced orchid growers who would like to learn more and meet other people with similar interests to join us. We host monthly meetings with guest speakers, plant raffles, special event planning, and of course a display table where our members show off their latest blooms.
-
-    %p If you're interested in becoming a member, or are just curious and would like to stop by one of our meetings to see what we're all about, you can find us on the second Monday of each month at the Center for Urban Horticulture on the University of Washington Campus.
-
-    %p The Northwest Orchid Society (NWOS) is an affiliate of the American Orchid Society (AOS) and the Orchid Digest Corporation (ODC).
-
-
-.content-wrapper.border-bottom.light1
-  .content-container#membership
-    %h2.section-header.green Become a Member
-
-    %p Membership is open to anyone, many of our members are brand new to orchid growing as a hobby and find a lot to learn at each new meeting. Some of our members join with years of orchid care under their belt and find a community in which they can give back and help to educate the next generation of orchid enthusiasts. Whether you just bought your first phalaenopsis, or you already have a greenhouse filled with your favorite species and hybrids there are many benefits to joining our society.
-
-    %ul
-      %li
-        %h3 Monthly Meetings
-        %p 
-          Meetings are normally held the second Monday of each month with the exception of July and August. The meetings begin at 7:00pm at the 
-          %a{href:"http://depts.washington.edu/uwbg/visit/directions.shtml", target: "_blank"} University of Washington Botanic Gardens, Center for Urban Horticulture,
-          in NHS Hall. Our meetings feature informative programs, guest speakers, orchid exhibits, plant raffles, and sales. One Meeting each year features a special auction. The auction is a chance for members to sell their extra plants and to bid on new ones to add to their collection.
-
-        .box-container
-          #map_canvas
-          %p.get-directions-link
-            %a{href: 'https://maps.google.com/maps?q=3501+NE+41st+St,+University+of+Washington,+Seattle,+WA+98105&ie=UTF-8&hq=&hnear=0x5490149af97454c1:0xc81512cfe09c20d0,3501+NE+41st+St,+Seattle,+WA+98105&gl=us&daddr=3501+NE+41st+St,+Seattle,+WA+98105&ei=jlmAUsbEJOS9iwKryICoBw&ved=0CD4QwwUwAA', target: '_blank'} 
-              Get Directions
-              %i.icon-arrow-right
-
-      %li
-        %h3 August Picnic
-        %p Instead of a meeting in August, the society holds a picnic for all of its members. The picnic is a social gathering held during a weekend in August, the date and location depending on weather.
-
-      %li
-        %h3 Holiday Gift and Potluck
-        %p In the month of December our meeting is a holiday potluck where each member receives a holiday gift orchid.
-
-      %li
-        %h3 Plant Sales Table
-        %p Members may bring a maximum of 5 orchid plants or compots to each regular monthly meeting to sell. Fifteen percent of money collected goes to the society. Although only members may sell plants, anyone in attendance may purchase plants.
-
-      %li
-        %h3 Orchid Auction
-        %p One of our monthly meetings is devoted to an auction of orchid plants. It is a chance for members to sell "surplus" plants and to add new ones to their collection.
-
-      %li
-        %h3 Annual Show
-        %p The Northwest Orchid Society sponsors an annual AOS judged show which is open to the public. Invited orchid vendors from across the U.S. bring plants to display and sell.
-
-      %li
-        %h3 Library of Orchid Publications
-        %p The NWOS maintains a library of orchid books, videotapes, and periodicals available for member use by arrangement with the Society Librarian.
-
-      %li
-        %h3 Orchid Exhibits
-        %p At our monthly meetings there is an exhibition table where members can display their blooming plants. During the meeting a member does the “plant table walk”, points out unusual, interesting, or exceptionally well-grown plants and asks some of the growers for information about their plants and growing conditions.
-
-    %p Annual dues of $25 for a single membership or $30 for a joint membership (two people residing in the same household) are due every July 1st. Those who join after March 1st are paid through June 30th of the following year.
-
-    %p  
-      %i Join or renew your membership now by using PayPal.
-      %br
-      %small 
-        You may also register your membership by sending us this completed
-        %a{href:'/forms/Membership_online_form.pdf', target: "_blank"} membership form.
-
-    %form.join-renew-paypal-form{action: "https://www.paypal.com/cgi-bin/webscr", method: "post", target: "_top"}
-      %input{type: "hidden", name: "cmd", value: "_s-xclick"}
-      %input{type: "hidden", name: "hosted_button_id", value: "FG6HMY972X6ZE"}
-      %input{type: "hidden", name: "on0", value: "Membership Plan"}
-      %input{type: "hidden", name: "currency_code", value: "USD"}
-
-      %label{name: "os0"} Choose a Membership Plan
-
-      .paypal-button-container
-        %div
-          %select{name: "os0"}
-            %option{value:"Single"} Single - $25.00 USD
-            %option{value:"Joint"} Joint - $30.00 USD
-
-        %div
-          %input{type: "image", src: "https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif", border: "0", name: "submit", alt: "PayPal - The safer, easier way to pay online!"}
-          %img{alt: "", border: "0", src: "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", width: "1", height: "1"}
-
-.content-wrapper.border-bottom.light2
-  .content-container#contact
-      
-    .contact-container
-      %p.first
-        %i.icon-envelope
-        %a{href: "mailto:nwos@nwos.org"} nwos@nwos.org
-        %br
-        %i.icon-phone
-        %a{href: "http://tel:+2067815805"} (206) 781-5805
-
-      %p.last
-        The Northwest Orchid Society
-        %br
-        PO Box 51021
-        %br
-        Seattle WA 98115-1021
+  %section.membership
+    %h2 Become a Member
+    %p We are an active society made up of a diverse group who all share a fasination with Orchids. What to learn about Orchids? What better way?
 

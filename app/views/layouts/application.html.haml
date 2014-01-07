@@ -41,25 +41,110 @@
       ga('send', 'pageview');
 
 %body
-  %nav.navbar
-    .navbar-header
-      .container
-        %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
-          %i.fa.fa-bars.fa-lg
-    .navbar-collapse.collapse
-      .container
-        %ul
-          %li
-            %a{href: "#contact"} Contact
-          %li
-            %a{href: "http://newsletter.nwos.org"} Newsletter
-          %li
-            %a{href: 'https://www.facebook.com/nworchidsociety'}
-              %i.fa.fa-facebook
+  %header.header
+    .navbar
+      .navbar-header
+        .container
+          = link_to root_path, class: 'logo-header' do
+            %h1.navbar-logo Northwest Orchid Society
+          %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
+            %i.fa.fa-bars.fa-lg
+      .navbar-collapse.collapse
+        %nav.container
+          %ul.main-nav
+            %li
+              %a{href: "#contact"} Events
+            %li
+              %a{href: "/membership"} Members
+            %li
+              %a{href: "#contact"} Blog
+            %li
+              %a{href: "/about"} About
+            %li
+              %a{href: "/contact"} Contact
 
-  %header.container
-    = link_to root_path, class: 'logo-header' do
-      %h1 Northwest Orchid Society
+          %ul.user-nav
+            %li
+              %a{href: "#contact"} Sign in
 
-  .container
+  .main           
     = yield
+
+  %footer.footer
+    %nav#site-map.container
+      %ul.site-map-containing-list
+        %li
+          %ul.site-map-section-list
+            %li.site-map-section-title
+              %a{href: "#contact"} Events
+            %li
+              %a{href: "#contact"} Judged Shows
+            %li
+              %a{href: "#contact"} Other Events
+        %li
+          %ul.site-map-section-list
+            %li.site-map-section-title
+              %a{href: "/membership"} Members
+            %li
+              %a{href: ""} Newsletter
+            %li
+              %a{href: "/membership#join-now"} Become a Member
+        %li
+          %ul.site-map-section-list
+            %li.site-map-section-title
+              %a{href: ""} Blog
+            %li
+              %a{href: ""} Recent Posts
+            %li
+              %a{href: ""} Popular
+        %li
+          %ul.site-map-section-list
+            %li.site-map-section-title
+              %a{href: "/about"} About
+            %li
+              %a{href: "/about#the-society"} The Society
+            %li
+              %a{href: "/about#scholarship-info"} Scholarship Info
+        %li
+          %ul.site-map-section-list
+            %li.site-map-section-title
+              %a{href: "/contact"} Contact
+
+      %ul.social-media-nav
+        %li
+          %a{href: ""}
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle.fa-stack-2x.background-icon
+              %i.fa.fa-facebook.fa-stack-1x.foreground-icon
+            %span.visuallyhidden facebook
+        %li
+          %a{href: ""}
+            %span.fa-stack.fa-lg
+              %i.fa.fa-circle.fa-stack-2x.background-icon
+              %i.fa.fa-twitter.fa-stack-1x.foreground-icon
+            %span.visuallyhidden Twitter
+
+    .footer-contact-container
+      .container
+        %h6.footer-title Northwest Orchid Society
+        %p.footer-contact-column
+          UW Center for Urban Horticulture
+          %br
+          3501 NE 41st Street
+          %br
+          Seattle, WA 98105
+
+        %p.footer-contact-column
+          PO Box 51021
+          %br
+          Seattle, WA 98115-1021
+
+        %p.footer-contact-column
+          %a.footer-phone{href: "http://tel:+2067815805"} 
+            %i.fa.fa-phone
+            (206) 781-5805
+          %br
+          %a.footer-email{href: "mailto:nwos@nwos.org"}
+            %i.fa.fa-envelope
+            nwos@nwos.org
+
