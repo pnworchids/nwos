@@ -1,11 +1,13 @@
 NwosWeb::Application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   get '/membership', to: 'pages#membership'
   get '/about', to: 'pages#about'
   get '/contact', to: 'pages#contact'
+
+  resources :events
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   root to: 'pages#home'
 
