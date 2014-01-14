@@ -13,7 +13,8 @@ gem 'jbuilder', '~> 1.2'                             # Build JSON APIs with ease
 gem 'haml'                                           # Clean markup
 gem 'activeadmin', github: 'gregbell/active_admin'   # Console for plebes
 gem 'tzinfo'                                         # For handling timezones and daylight savings conversions
-gem 'font-awesome-rails'                             # For adding "Font Awesome" icon fonts
+gem 'active_attr'                                    # What ActiveModel left out
+gem 'font-awesome-rails'                             # For using "Font Awesome" icon fonts
 
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'

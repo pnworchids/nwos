@@ -18,12 +18,29 @@
     @include Hidden;
 }
 
+@media all and (max-width: 768px) {
+  .mobile-hidden {
+    @include Hidden;
+  }
+}
+@media all and (min-width: 769px) {
+  .desktop-hidden {
+    @include Hidden;
+  }
+}
+
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 
 .visuallyhidden {
     @include VisuallyHidden;
+}
+
+@media all and (max-width: 768px) {
+  .mobile-visuallyhidden {
+    @include VisuallyHidden;
+  }
 }
 
 /*

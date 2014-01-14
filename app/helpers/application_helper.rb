@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def full_title(base_title, page_title)
+  def full_title(base_title = "NWOS", page_title)
     if page_title.empty?
       base_title
     else
@@ -17,6 +17,8 @@ module ApplicationHelper
   def convert_to_css_class(str = "")
     str.gsub(/[^0-9a-z ]/i, '').gsub(/\s+/, '-').downcase
   end
+
+  # ------- COLUMNS & LISTS
 
   def get_item_class(i, arr)
     klasses = i % 2 == 0 ? 'odd ' : 'even '
@@ -41,6 +43,25 @@ module ApplicationHelper
       return 'first-of-'+column_num.to_s
     end
   end
+
+  # ------- FORMS
+
+  def field_error_highlight(errors)
+    'field_with_errors' unless errors.blank?
+  end
+
+  def field_error_message(errors)
+    unless errors.blank?
+      if errors.include?("can't be blank")
+        # if it blank, just show the blank error
+        render 'application/forms/field_error_message', errors: ["can't be blank"]
+      else
+        render 'application/forms/field_error_message', errors: errors
+      end
+    end
+  end
+
+  # ------- URLS
 
   def get_url(path = "")
     return request.protocol+ENV['DOMAIN_URL']+path.to_s

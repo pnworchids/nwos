@@ -2,9 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def about
-  end
-
-  def fall_show
+  def contact
+    @message = ContactMessage.new
   end
 end

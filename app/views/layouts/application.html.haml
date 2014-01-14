@@ -23,7 +23,7 @@
       %meta{ property: 'og:description', content: ENV["FB_COPY"] }
 
     %title 
-      = full_title("NWOS", yield(:title))
+      = full_title(yield(:title))
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
@@ -45,7 +45,7 @@
     .navbar
       .navbar-header
         .container
-          = link_to root_path, class: 'logo-header' do
+          = link_to root_path do
             %h1.navbar-logo Northwest Orchid Society
           %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
             %i.fa.fa-bars.fa-lg
@@ -53,19 +53,17 @@
         %nav.container
           %ul.main-nav
             %li
-              %a{href: "#contact"} Events
+              =link_to "Events", events_path
             %li
-              %a{href: "/membership"} Members
+              =link_to "Members", membership_path
             %li
-              %a{href: "#contact"} Blog
+              =link_to "About", about_path
             %li
-              %a{href: "/about"} About
-            %li
-              %a{href: "/contact"} Contact
+              =link_to "Contact", contact_path
 
-          %ul.user-nav
-            %li
-              %a{href: "#contact"} Sign in
+          -# %ul.user-nav
+          -#   %li
+          -#     %a{href: ""} Sign in
 
   .main           
     = yield
@@ -76,39 +74,31 @@
         %li
           %ul.site-map-section-list
             %li.site-map-section-title
-              %a{href: "#contact"} Events
+              =link_to "Events", events_path
             %li
-              %a{href: "#contact"} Judged Shows
+              %a{href: ""} Judged Shows
             %li
-              %a{href: "#contact"} Other Events
+              %a{href: ""} Other Events
         %li
           %ul.site-map-section-list
             %li.site-map-section-title
-              %a{href: "/membership"} Members
+              =link_to "Members", membership_path
             %li
               %a{href: ""} Newsletter
             %li
-              %a{href: "/membership#join-now"} Become a Member
+              =link_to "Members", membership_path(anchor: 'join-now')
         %li
           %ul.site-map-section-list
             %li.site-map-section-title
-              %a{href: ""} Blog
+              =link_to "About", about_path
             %li
-              %a{href: ""} Recent Posts
+              =link_to "The Society", about_path(anchor: 'the-society')
             %li
-              %a{href: ""} Popular
+              =link_to "Scholarship Info", about_path(anchor: 'scholarship-info')
         %li
           %ul.site-map-section-list
             %li.site-map-section-title
-              %a{href: "/about"} About
-            %li
-              %a{href: "/about#the-society"} The Society
-            %li
-              %a{href: "/about#scholarship-info"} Scholarship Info
-        %li
-          %ul.site-map-section-list
-            %li.site-map-section-title
-              %a{href: "/contact"} Contact
+              =link_to "Contact", contact_path
 
       %ul.social-media-nav
         %li

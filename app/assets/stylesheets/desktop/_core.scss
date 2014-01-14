@@ -45,6 +45,8 @@ header.header {
     background-color: transparent;
     border-bottom: 3px solid $gray2;
     @include Clearfix;
+
+    margin-top: -1.8em;
   }
 
   .navbar-collapse.collapse {
@@ -79,7 +81,7 @@ header.header {
     }
 
     &.main-nav {
-      float: left;
+      float: right;
 
       li {
         a {
@@ -88,9 +90,9 @@ header.header {
       }
     }
 
-    &.user-nav {
-      float: right;
-    }
+//    &.user-nav {
+//      float: right;
+//    }
   }
 }
 

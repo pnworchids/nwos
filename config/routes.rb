@@ -1,9 +1,13 @@
 NwosWeb::Application.routes.draw do
 
-  get '/membership', to: 'pages#membership'
-  get '/about', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
+  get '/membership', to: 'pages#membership', as: 'membership'
 
+  get '/about', to: 'pages#about', as: 'about'
+
+  post '/contact', to: 'contact_messages#create', as: 'contact_messages'
+  get '/contact', to: 'pages#contact', as: 'contact'
+
+  get '/admin/events/test' => 'admin/events#test', :as => :admin_events_test
   resources :events
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -4,29 +4,7 @@
   %section
     %h2.section-header Contact Us
 
-    %form
-      .field.required
-        %label Send To:
-        %select
-          %option{value: "nwos@nwos.org"} General Inquiries
-          %option{value: "publicity@nwos.org"} Publicity
-          %option{value: "webmaster@nwos.org"} Webmaster
-          %option{value: "newsletter@nwos.org"} Newsletter Editor
-          %option{value: "president@nwos.org"} President
-
-      .field.required
-        %input{type: "text", placeholder: "Name"}
-
-      .field.required.email
-        %input{type: "text", placeholder: "Email Address"}
-
-      .field.required.phone
-        %input{type: "text", placeholder: "Phone Number"}
-
-      .field.required
-        %textarea{placeholder: "Your message"}
-
-      %input{type: "submit", value: "Send"}
+    = render "contact_messages/form" 
 
   %section
     %h2.section-header General Contact Information
