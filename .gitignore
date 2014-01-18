@@ -16,6 +16,9 @@
 /log/*.log.lck
 /tmp
 
+# Ignore sensitive files
+.env
+
 # Ignore other unneeded files
 ._*
 *.swp

@@ -1,16 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Montserrat:400,700);
 
 @import 'normalize';
+@import 'bourbon';
+@import 'grid-settings';
+@import 'neat';
+@import 'font-awesome';
 @import 'mixins';
 @import 'helpers';
-@import 'font-awesome';
 @import 'forms';
+
 @import 'mobile/core';
 @import 'mobile/home';
+
+@import 'mobile/contact';
 
 // Media queries will not be picked up by ie8 and lower.
 // See ie8.scss
 @media all and (min-width: 769px) {
     @import 'desktop/core';
     @import 'desktop/home';
+
+    @import 'desktop/contact';
 }

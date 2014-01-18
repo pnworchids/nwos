@@ -5,15 +5,14 @@ class ContactMessage
   attribute :to, :type => String
   attribute :name, :type => String
   attribute :email, :type => String
-  attribute :phone, :type => String
   attribute :subject, :type => String
   attribute :body, :type => String
 
-  attr_accessor :to, :name, :email, :phone, :subject, :body
+  attr_accessor :to, :name, :email, :subject, :body
 
   validates :to, :name, :email, :subject, :body, presence: true
-  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  validates :subject, length: {maximum: 78}
+  validates :email, format: { with: /\A([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)\z/i }
+  # validates :subject, length: {maximum: 78}
 
   @@contacts = {
     general: { name: "General Inqueries", email: "nwos@nwos.org" },

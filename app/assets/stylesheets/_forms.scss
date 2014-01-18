@@ -1,13 +1,214 @@
+/* ==========================================================================
+   Form Styles
+   ========================================================================== */
+
 .field {
+  @include Clearfix;
+  margin-bottom: 1em;
+
   label {
     display: block;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+    color: $brand-text-dark;
+  }
 
-    &.inline-label {
-      display: inline;
+  input[type="text"] {
+    @include BoxSizing;
+    display: block;
+    width: 100%;
+    padding: 0.7em;
+    border: 1px solid $brand-neutral;
+
+    font-size: 1em;
+    @include Montserrat;
+    -webkit-appearance: none;
+    @include BorderRadius(0);
+  }
+
+  textarea {
+    @include BoxSizing;
+    display: block;
+    width: 100%;
+    padding: 0.7em;
+    border: 1px solid $brand-neutral;
+    resize: none;
+
+    font-size: 1em;
+    @include Montserrat;
+    -webkit-appearance: none;
+    @include BorderRadius(0);
+  }
+}
+
+input[type="submit"] {
+  float: left;
+  clear: both;
+}
+
+/* ==========================================================================
+   Standard Field Errors
+   ========================================================================== */
+
+.field_with_errors {
+
+  input[type="text"], 
+  textarea {
+    border-color: $warning-color;
+    margin: 0;
+  }
+
+  .field_error_message {
+    background-color: $warning-color-lighter;
+    color: $warning-color-dark;
+    padding: 0.8em;
+    font-size: 0.9em;
+  }
+}
+
+.error_messages {
+  background-color: #f0dede;
+  color: $warning-color;
+  margin-bottom: 1em;
+
+  ul {
+    padding: 0.7em;
+    list-style-type: none;
+
+    li {
+      margin-top: 0.2em;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
 }
 
-.field_with_errors {
-  border: 1px solid red;
+/* ==========================================================================
+   Custom Elements Styles
+   ========================================================================== */
+
+form.custom-elements {
+
+  /******** Custom Checkboxes *********/
+
+  .check-box-container {
+    position: relative;
+    clear: both;
+  }
+
+  .custom-checkbox-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .faux-checkbox {
+      display: block;
+      width: 1.5em;
+      height: 1.5em;
+      border: 1px solid $brand-neutral;
+    }
+
+    input[type="checkbox"] {
+      @include Hidden;
+      @include Focusable;
+    }
+  }
+
+  .field_with_errors {
+    .faux-checkbox {
+      border-color: $warning-color;
+    }
+  }
+
+  /******** Custom File Input *********/
+
+  .custom-file-input-wrapper {
+    position: relative;
+
+    input[type="file"] {
+      @include Hidden;
+      @include Focusable;
+    }
+  }
+
+  .faux-file-input {
+    cursor: pointer;
+  }
+}
+
+/******** Custom Select Styles *********/
+
+select.custom { // for ie?
+  background-color: white;
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  height: 45px;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  float: left;
+  width: 100%;
+
+  select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    
+    @include Opacity(0);
+  }
+}
+
+.dropdown {
+  position: relative;
+  padding: 0.7em 2.6em 0.7em 0.7em;
+  border: 1px solid $brand-neutral;
+  background-color: white;
+  line-height: 1;
+
+  span {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.6em;
+    height: 100%;
+
+    i {
+      display: block;
+      position: relative;
+      text-align: center;
+      font-size: 1.2em;
+      top: 0.5em;
+      color: $brand-neutral-dark;
+    }
+  }
+
+  &.value-selected {
+    //color: black;
+  }
+}
+
+.faux-submit-btn {
+  display: block;
+  padding: 1em;
+  background-color: $brand-neutral-lighter;
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $brand-text-dark;
+  @include Transition(all 0.4s ease);
+  @include BorderRadius(3px);
+
+  &:hover, :active {
+    background-color: $brand-neutral-light;
+    color: $brand-text-dark;
+  }
 }

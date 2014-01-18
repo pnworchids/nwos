@@ -8,23 +8,57 @@ $green: #6E8A41;
 $light-green: #8db153;
 $red: #AD2835; //#9A2236;
 
-$standard-black: #444;
+
+// 7D1935 ruby red
+// f73f3d
+
+$brand-text-darker: #4b4b4b;
+$brand-text-dark: lighten( $brand-text-darker, 20% );
+$brand-text: lighten( $brand-text-darker, 40% );
+$brand-text-light: lighten( $brand-text-darker, 60% );
+$brand-text-lighter: lighten( $brand-text-darker, 80% );
+
+$brand-neutral-lighter: #f7f6f4;
+$brand-neutral-lightest: lighten( $brand-neutral-lighter, 5% );
+$brand-neutral-light: desaturate(darken( $brand-neutral-lighter, 5% ), 5%);
+$brand-neutral: desaturate(darken( $brand-neutral-lighter, 12% ), 7%);
+$brand-neutral-dark: desaturate(darken( $brand-neutral-lighter, 25% ), 9%);
+$brand-neutral-darker: desaturate(darken( $brand-neutral-lighter, 30% ), 9%);
+
+$brand-green: #3b5998;
+$brand-green-light: lighten( $brand-green, 10% );
+$brand-green-lighter: lighten( $brand-green, 20% );
+$brand-green-dark: darken( $brand-green, 10% );
+$brand-green-darker: darken( $brand-green, 20% );
+
+$brand-pink: #B163A3;
+$brand-pink-light: lighten( $brand-pink, 10% );
+$brand-pink-lighter: lighten( $brand-pink, 20% );
+$brand-pink-dark: darken( $brand-pink, 10% );
+$brand-pink-darker: darken( $brand-pink, 20% );
+
+$warning-color: #fac005;
+$warning-color-light: lighten( $warning-color, 20% );
+$warning-color-lighter: lighten( $warning-color, 40% );
+$warning-color-dark: darken( $warning-color, 10% );
+$warning-color-darker: darken( $warning-color, 20% );
+
+
+$standard-black: $brand-text-darker;
 $text-gray: #7b7b7b;
-$gray1: #faf9f7;
-$gray2: #f0efed;
-$gray3: #f6f6f4;
-$gray4: #e7e7e2;
-$gray5: #d9d9d6;
-$gray6: #A3A3A0;
-$gray7: #939390;
 
 
 @mixin Goudy {
   font-family: 'Sorts Mill Goudy', serif;
 }
 
-//font-family: 'Sorts Mill Goudy', serif;
-//font-family: 'Montserrat', sans-serif;
+@mixin Montserrat {
+  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+}
+
+@mixin DarkTransparent($alpha: 0.5, $property: background-color) {
+  #{$property}: rgba(91,91,92,$alpha);
+}
 
 @mixin ImageReplacement {
   background-color: transparent;

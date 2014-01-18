@@ -1,5 +1,4 @@
 .field_error_message
-  - errors.each_with_index do |e, i|
-    - punct = (i >= errors.count - 1) ? "" : ", "
-    = succeed punct do
-      %span= e
+  %ul
+    - errors.each_with_index do |e, i|
+      %li= e

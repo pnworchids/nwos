@@ -1,36 +1,40 @@
 -provide(:title, 'Contact')
 
-.container.page-main-content
-  %section
-    %h2.section-header Contact Us
+.container.contact-page-container.row-right
+
+  %section.standard-aside.contact-info-section.col-1-third.omega
+    .aside-block.contact-info
+      %h2.section-header Contact Information
+      %p
+        %a.contact-phone{href: "http://tel:+2067815805"} 
+          %i.fa.fa-phone
+          (206) 781-5805
+        %br
+        %a.contact-email{href: "mailto:nwos@nwos.org"} 
+          %i.fa.fa-envelope
+          nwos@nwos.org
+
+    .aside-block
+      %h3.aside-header Mailing Address
+      %p
+        Northwest Orchid Society
+        %br
+        PO Box 51021
+        %br 
+        Seattle, WA 98115-1021
+
+    .aside-block
+      %h3.aside-header Meeting Location
+      %p
+        UW Botantic Gardens
+        %br
+        Center for Urban Horticulture
+        %br
+        3501 NE 41st Street 
+        %br
+        Seattle, WA 98105
+
+  %section.standard-section.contact-form-section.col-2-third
+    %h2.section-header Send Us a Message
 
     = render "contact_messages/form" 
-
-  %section
-    %h2.section-header General Contact Information
-
-    Email:
-    %a{href: "mailto:nwos@nwos.org"} nwos@nwos.org
-
-    %br
-
-    Phone:
-    %a{href: "http://tel:+2067815805"} (206) 781-5805
-
-    %h3 Meeting Location
-    %p
-      University of Washington Botanical Gardens
-      %br
-      Center for Urban Horticulture 
-      %br
-      3501 NE 41st Street 
-      %br
-      Seattle, WA 98105
-
-    %h3 Mailing Address
-    %p
-      Northwest Orchid Society
-      %br
-      PO Box 51021
-      %br 
-      Seattle, WA 98115-1021

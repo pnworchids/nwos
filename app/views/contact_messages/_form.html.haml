@@ -1,12 +1,7 @@
-= form_for @message do |f|
-
-  - if @message.errors.any?
-
-    .error_messages
-      %p Please complete all required fields marked in red
+= form_for @message, html: {data: {validation: true}} do |f|
 
   .field.required
-    = f.label :to, "Send To:", class: "inline-label"
+    = f.label :to, "Send To", class: "inline-label"
     = f.select :to, options_for_select(ContactMessage.recipient_options, @message.to)
 
   .field.required
@@ -19,16 +14,14 @@
     = f.text_field :email, value: @message.email, class: field_error_highlight(@message.errors[:email])
     = field_error_message(@message.errors[:email])
 
-  .field.required.phone
-    = f.label :phone, "Phone Number"
-    = f.text_field :phone, value: @message.phone, class: field_error_highlight(@message.errors[:phone])
-
   .field.required
     = f.label :subject, "Subject"
     = f.text_field :subject, value: @message.subject, class: field_error_highlight(@message.errors[:subject])
+    = field_error_message(@message.errors[:subject])
 
   .field.required
     = f.label :body, "Message"
     = f.text_area :body, value: @message.body, class: field_error_highlight(@message.errors[:body]), rows: 10
+    = field_error_message(@message.errors[:body])
 
   %input{type: "submit", value: "Send"}

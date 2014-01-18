@@ -52,12 +52,7 @@ module ApplicationHelper
 
   def field_error_message(errors)
     unless errors.blank?
-      if errors.include?("can't be blank")
-        # if it blank, just show the blank error
-        render 'application/forms/field_error_message', errors: ["can't be blank"]
-      else
-        render 'application/forms/field_error_message', errors: errors
-      end
+      render 'application/forms/field_error_message', errors: errors
     end
   end
 

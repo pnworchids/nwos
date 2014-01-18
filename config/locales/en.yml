@@ -19,5 +19,55 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+# en:
+#   activerecord:
+#     models: 
+#       user: "Customer"
+#     attributes:
+#       user:
+#         email: "Email address"
+#     errors:
+#       models:
+#         user:
+#           attributes:
+#             source_system_id:
+#               blank: "must fill %{attribute}" 
+#               taken: " Id User already provisioned"
+#             entity_type:
+#               inclusion: "should be Customer or User"
+#             target_system:
+#               inclusion: "should be LOCAL or OPENAM"
+
 en:
-  hello: "Hello world"
+  errors:
+    # The default format to use in full error messages.
+    format: "%{message}"
+
+    # The values :model, :attribute and :value are always available for interpolation
+    # The value :count is available when applicable. Can be used for pluralization.
+    messages:
+      inclusion: "is not included in the list"
+      exclusion: "is reserved"
+      invalid: "is not valid"
+      confirmation: "doesn't match %{attribute}"
+      accepted: "must be accepted"
+      empty: "cannot be empty"
+      blank: "cannot be blank"
+      present: "must be blank"
+      too_long: "must not be longer than %{count} characters"
+      too_short: "must be at least %{count} characters in length"
+      wrong_length: "must be %{count} characters in length"
+      not_a_number: "must be a number"
+      not_an_integer: "must be an integer"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      equal_to: "must be equal to %{count}"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      other_than: "must be other than %{count}"
+      odd: "must be odd"
+      even: "must be even"
+
+    attributes:
+      email:
+        invalid: "must be a valid email address"

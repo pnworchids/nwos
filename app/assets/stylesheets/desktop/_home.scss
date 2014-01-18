@@ -7,24 +7,16 @@
     margin: 0;
     bottom: 0;
     left: 0;
-    color: white;
 
     .container {
       position: relative;
+      padding: 0;
     }
 
     .home-featured-content {
-      background-color: $gray7;
+      background-color: rgba($brand-neutral-light, 1);
       padding: 1.8em;
-      margin-left: -1.8em;
-      max-width: 500px;
-
-      .home-featured-heading {
-        margin: 0 0 0.2em;
-        font-size: 1.8em;
-        line-height: 1;
-        text-transform: uppercase;
-      }
+      width: 50%;
     }
   }
 

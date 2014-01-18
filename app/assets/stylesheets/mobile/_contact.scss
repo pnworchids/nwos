@@ -1,0 +1,41 @@
+.pages-contact {
+
+  @include media($mobile) {
+//    .contact-page-container {
+//      padding: 0;
+//    }
+
+//    .contact-info-section{
+//      padding-left: 1em;
+//      padding-right: 1em;
+//    }
+
+//    .contact-form-section {
+//      padding: 2em 1em 4em;
+//      margin-bottom: 0;
+//      background-color: $brand-neutral-lighter;
+
+//      .faux-submit-btn {
+//        background-color: $brand-neutral-light;
+//        &:hover, &:active {
+//          background-color: $brand-neutral;
+//        }
+//      }
+//    }
+  }
+
+  .contact-info {
+    @include Clearfix;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .contact-phone,
+    .contact-email {
+      i {
+        padding-right: 0.4em;
+      }
+    }
+  }
+}
