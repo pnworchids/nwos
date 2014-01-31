@@ -1,51 +1,30 @@
-$light1: #fcfcfa;
-$light2: #f9f8f5;
-$light3: #e7e7e2; //#ebe4d5; //#d9d4ca; //#f0e9db;
-$medium: #d7d7d2; //#d9d5cd;
-$medium2: #a6a197;
-$dark: #6c6b65;
-$green: #6E8A41;
-$light-green: #8db153;
-$red: #AD2835; //#9A2236;
+$magenta: #eb007d;
+$magenta-light: lighten( $magenta, 10% );
+$magenta-lighter: lighten( $magenta, 20% );
+$magenta-dark: darken( $magenta, 10% );
+$magenta-darker: darken( $magenta, 20% );
 
+$deep-magenta: #300019;
 
-// 7D1935 ruby red
-// f73f3d
+$orange: #fe5e3a;
 
-$brand-text-darker: #4b4b4b;
-$brand-text-dark: lighten( $brand-text-darker, 20% );
-$brand-text: lighten( $brand-text-darker, 40% );
-$brand-text-light: lighten( $brand-text-darker, 60% );
-$brand-text-lighter: lighten( $brand-text-darker, 80% );
+$blue: #00356d;
 
-$brand-neutral-lighter: #f7f6f4;
-$brand-neutral-lightest: lighten( $brand-neutral-lighter, 5% );
-$brand-neutral-light: desaturate(darken( $brand-neutral-lighter, 5% ), 5%);
-$brand-neutral: desaturate(darken( $brand-neutral-lighter, 12% ), 7%);
-$brand-neutral-dark: desaturate(darken( $brand-neutral-lighter, 25% ), 9%);
-$brand-neutral-darker: desaturate(darken( $brand-neutral-lighter, 30% ), 9%);
+$onyx: #303030;
+$onyx-light: lighten( $onyx, 4% );
+$onyx-lighter: lighten( $onyx, 8% );
+$onyx-dark: darken( $onyx, 8% );
 
-$brand-green: #3b5998;
-$brand-green-light: lighten( $brand-green, 10% );
-$brand-green-lighter: lighten( $brand-green, 20% );
-$brand-green-dark: darken( $brand-green, 10% );
-$brand-green-darker: darken( $brand-green, 20% );
+$white: #fefefe;
+$white-dark: darken( $white, 10% );
+$white-darker: darken( $white, 20% );
 
-$brand-pink: #B163A3;
-$brand-pink-light: lighten( $brand-pink, 10% );
-$brand-pink-lighter: lighten( $brand-pink, 20% );
-$brand-pink-dark: darken( $brand-pink, 10% );
-$brand-pink-darker: darken( $brand-pink, 20% );
+$off-white: #f9f8f7;
+$off-white-dark: darken( $off-white, 5% );
+$off-white-darker: darken( $off-white, 15% );
 
-$warning-color: #fac005;
-$warning-color-light: lighten( $warning-color, 20% );
-$warning-color-lighter: lighten( $warning-color, 40% );
-$warning-color-dark: darken( $warning-color, 10% );
-$warning-color-darker: darken( $warning-color, 20% );
-
-
-$standard-black: $brand-text-darker;
-$text-gray: #7b7b7b;
+$text-black: #404040;
+$text-gray: #9a9a9a;
 
 
 @mixin Goudy {
@@ -54,10 +33,6 @@ $text-gray: #7b7b7b;
 
 @mixin Montserrat {
   font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
-}
-
-@mixin DarkTransparent($alpha: 0.5, $property: background-color) {
-  #{$property}: rgba(91,91,92,$alpha);
 }
 
 @mixin ImageReplacement {
@@ -126,61 +101,63 @@ $text-gray: #7b7b7b;
   }
 }
 
-@mixin InlineBlock {
-  display: inline-block;
-  *zoom:1;
-  *display:inline;
+/*
+ *  Media Query mixins
+ *  http://css-tricks.com/conditional-media-query-mixins/
+ */
+
+@mixin media($point) {
+  $bp-mobile-tablet: "(max-width: 768px)";
+  $bp-mobile-only: "(max-width: 520px)";
+  $bp-tablet-only: "(min-width: 521px) and (max-width: 768px)";
+
+  $bp-tablet-desktop: "(min-width: 521px)";
+  $bp-desktop: "(min-width: 769px)";
+
+  @if ($media-queries) {
+    // show content in media query
+    @if $point == mobile-tablet {
+      @media #{$bp-mobile-tablet} { @content; }
+    }
+    @else if $point == mobile-only {
+      @media #{$bp-mobile-only} { @content; }
+    }
+    @else if $point == tablet-only {
+      @media #{$bp-tablet-only}  { @content; }
+    }
+    @else if $point == desktop-tablet {
+      @media #{$bp-tablet-desktop}  { @content; }
+    }
+    @else if $point == desktop {
+      @media #{$bp-desktop}  { @content; }
+    }
+
+  } @else {
+    // if media queries are disabled
+    // and the content is for desktop, just render the content
+    @if $point == desktop-tablet or $point == desktop {
+      @content;
+    }
+  }
 }
 
 /*
  *  Progressive enhancement mixins
+ *  For more see whats included with Bourbon: http://bourbon.io/docs/
  */
 
-@mixin TextShadow($args) {
-  -webkit-text-shadow: $args;
-     -moz-text-shadow: $args;
-          text-shadow: $args;
-}
-
-@mixin Opacity($value: 0.5) {
-  -webkit-opacity: $value;
-     -moz-opacity: $value;
-          opacity: $value;
-
-  $msvalue: $value*100;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$msvalue)";
-      filter: alpha(opacity=$msvalue);
-  *zoom: 1;
-}
-
-@mixin BoxSizing($value: border-box){
-  -webkit-box-sizing: $value;
-     -moz-box-sizing: $value;
-          box-sizing: $value;
-}
-
-@mixin Shadow($value){
-  -webkit-box-shadow: $value;
-     -moz-box-shadow: $value;
-          box-shadow: $value; 
-}
-
-@mixin BorderRadius($value: 3px) {
-  -webkit-border-radius: $value;
-     -moz-border-radius: $value;
-          border-radius: $value;
-}
-
-@mixin BackgroundClip($value) {
+@mixin background-clip($value) {
   // keeps background from busting out of border 
   -webkit-background-clip: $value;
      -moz-background-clip: $value;
           background-clip: $value+"-box";
 }
 
-@mixin Transition($value){
-  -webkit-transition: $value;
-     -moz-transition: $value;
-       -o-transition: $value;
-          transition: $value;
+@mixin font-smoothing($value: antialiased) {
+  -webkit-font-smoothing: $value;
+}
+
+@mixin rgba-fallback($attr, $hex, $opacity) {
+  #{$attr}: $hex;
+  #{$attr}: rgba($hex, $opacity);
 }

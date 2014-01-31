@@ -1,6 +1,6 @@
 .pages-contact {
 
-  @include media($mobile) {
+//  @include media($mobile) {
 //    .contact-page-container {
 //      padding: 0;
 //    }
@@ -22,7 +22,7 @@
 //        }
 //      }
 //    }
-  }
+//  }
 
   .contact-info {
     @include Clearfix;

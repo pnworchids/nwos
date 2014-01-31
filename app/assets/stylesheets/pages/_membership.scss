@@ -1,0 +1,56 @@
+.pages-membership {
+  .photo-header {
+    background-image: url(../assets/photo_header_bgs/oncidium.jpg);
+  }
+
+  .page-header {
+    background-color: $off-white;
+
+    .container {
+      padding-right: 0;
+      max-width: 952px;
+    }
+  }
+}
+
+.membership-newsletter {
+
+  .membership-newsletter-title {
+    font-size: 1.6em;
+    vertical-align: middle;
+  }
+
+  .membership-newsletter-content {
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      margin-right: -2em;
+    }
+  }
+
+  a {
+    display: block;
+    position: relative;
+    padding: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    i {
+      @include position(absolute, 50% 0.5em 0 0);
+      font-size: 2.2em;
+      margin-top: -0.5em;
+    }
+
+    &.newsletter-latest {
+      background-color: $orange;
+      color: white;
+    }
+
+    &.newsletter-archives {
+      background-color: $off-white-dark;
+      color: $text-gray;
+    }
+  }
+}

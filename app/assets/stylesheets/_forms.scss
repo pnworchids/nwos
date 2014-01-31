@@ -11,34 +11,34 @@
     text-transform: uppercase;
     font-size: 0.9em;
     margin-bottom: 0.3em;
-    color: $brand-text-dark;
+    //color: $brand-text-dark;
   }
 
   input[type="text"] {
-    @include BoxSizing;
+    @include box-sizing(border-box);
     display: block;
     width: 100%;
     padding: 0.7em;
-    border: 1px solid $brand-neutral;
+    //border: 1px solid $brand-neutral;
 
     font-size: 1em;
     @include Montserrat;
     -webkit-appearance: none;
-    @include BorderRadius(0);
+    border-radius: 0;
   }
 
   textarea {
-    @include BoxSizing;
+    @include box-sizing(border-box);
     display: block;
     width: 100%;
     padding: 0.7em;
-    border: 1px solid $brand-neutral;
+    //border: 1px solid $brand-neutral;
     resize: none;
 
     font-size: 1em;
     @include Montserrat;
     -webkit-appearance: none;
-    @include BorderRadius(0);
+    border-radius: 0;
   }
 }
 
@@ -55,13 +55,13 @@ input[type="submit"] {
 
   input[type="text"], 
   textarea {
-    border-color: $warning-color;
+    //border-color: $warning-color;
     margin: 0;
   }
 
   .field_error_message {
-    background-color: $warning-color-lighter;
-    color: $warning-color-dark;
+    //background-color: $warning-color-lighter;
+    //color: $warning-color-dark;
     padding: 0.8em;
     font-size: 0.9em;
   }
@@ -69,7 +69,7 @@ input[type="submit"] {
 
 .error_messages {
   background-color: #f0dede;
-  color: $warning-color;
+  //color: $warning-color;
   margin-bottom: 1em;
 
   ul {
@@ -108,7 +108,7 @@ form.custom-elements {
       display: block;
       width: 1.5em;
       height: 1.5em;
-      border: 1px solid $brand-neutral;
+      //border: 1px solid $brand-neutral;
     }
 
     input[type="checkbox"] {
@@ -119,7 +119,7 @@ form.custom-elements {
 
   .field_with_errors {
     .faux-checkbox {
-      border-color: $warning-color;
+      //border-color: $warning-color;
     }
   }
 
@@ -162,14 +162,14 @@ select.custom { // for ie?
     width: 100%;
     height: 100%;
     
-    @include Opacity(0);
+    opacity: 0;
   }
 }
 
 .dropdown {
   position: relative;
   padding: 0.7em 2.6em 0.7em 0.7em;
-  border: 1px solid $brand-neutral;
+  //border: 1px solid $brand-neutral;
   background-color: white;
   line-height: 1;
 
@@ -187,7 +187,7 @@ select.custom { // for ie?
       text-align: center;
       font-size: 1.2em;
       top: 0.5em;
-      color: $brand-neutral-dark;
+      //color: $brand-neutral-dark;
     }
   }
 
@@ -199,16 +199,16 @@ select.custom { // for ie?
 .faux-submit-btn {
   display: block;
   padding: 1em;
-  background-color: $brand-neutral-lighter;
+  //background-color: $brand-neutral-lighter;
   font-size: 1.2em;
   text-align: center;
   text-transform: uppercase;
-  color: $brand-text-dark;
-  @include Transition(all 0.4s ease);
-  @include BorderRadius(3px);
+  //color: $brand-text-dark;
+  @include transition (all 0.4s ease);
+  border-radius: 3px;
 
   &:hover, :active {
-    background-color: $brand-neutral-light;
-    color: $brand-text-dark;
+    //background-color: $brand-neutral-light;
+    //color: $brand-text-dark;
   }
 }

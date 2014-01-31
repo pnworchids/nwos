@@ -1,5 +1,24 @@
 -provide(:title, 'Membership')
 
+.page-header
+  .photo-header
+  .container
+    %section.membership-newsletter.table-grid
+      %h2.gray-section-header.membership-newsletter-title.tcell
+        %i.fa.fa-envelope
+        Newsletter
+      .membership-newsletter-content.tcell
+        %ul.table-grid
+          %li.tcell-1-2
+            %a.newsletter-latest{href: ''} 
+              Latest Edition
+              %i.fa.fa-angle-right
+          %li.tcell-1-2
+            %a.newsletter-archives{href: ''} 
+              Archives
+              %i.fa.fa-angle-right
+
+
 .container
 
   %section#membership.standard-section

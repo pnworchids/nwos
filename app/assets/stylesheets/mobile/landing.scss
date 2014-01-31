@@ -44,7 +44,7 @@ nav {
   }
 
   li {
-    @include InlineBlock;
+    @include inline-block;
     vertical-align: middle;
     margin-left: 2em;
     padding-top: 0.35em;

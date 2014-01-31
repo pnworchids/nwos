@@ -24,12 +24,17 @@
 
     %title 
       = full_title(yield(:title))
-    = stylesheet_link_tag "application", media: "all"
-    = javascript_include_tag "application"
-    %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
+
+    =surround '<!--[if !IE]> -->'.html_safe, '<!-- <![endif]-->'.html_safe do
+      = stylesheet_link_tag "application", media: "all"
+    /[if (gte IE 9)]
+      = stylesheet_link_tag "application", media: "all"
     /[if (lt IE 9)]
       = stylesheet_link_tag "ie8", :media => "all"
       %script{src: "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+
+    = javascript_include_tag "application"
+    %script{src: "http://maps.googleapis.com/maps/api/js?sensor=false"}
     = csrf_meta_tags
     %script
       / (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -42,7 +47,7 @@
 
 %body{class: get_body_class}
   %header.header
-    .navbar
+    .navbar.container
       .navbar-header
         .container
           = link_to root_path do
@@ -50,7 +55,7 @@
           %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
             %i.fa.fa-bars.fa-lg
       .navbar-collapse.collapse
-        %nav.container
+        %nav
           %ul.main-nav
             %li
               =link_to "Events", events_path
@@ -61,82 +66,74 @@
             %li
               =link_to "Contact", contact_path
 
-          -# %ul.user-nav
-          -#   %li
-          -#     %a{href: ""} Sign in
-
-  .main           
+  .main 
     = yield
 
   %footer.footer
-    %nav#site-map.container
-      %ul.site-map-containing-list
-        %li
-          %ul.site-map-section-list
-            %li.site-map-section-title
+    .container
+      %ul#site-map
+        %li.site-map-col
+          %ul
+            %li
               =link_to "Events", events_path
             %li
-              %a{href: ""} Judged Shows
+              %a{href: ""} Sales
             %li
-              %a{href: ""} Other Events
-        %li
-          %ul.site-map-section-list
-            %li.site-map-section-title
+              %a{href: ""} Judged Shows
+        %li.site-map-col
+          %ul
+            %li
               =link_to "Members", membership_path
             %li
               %a{href: ""} Newsletter
             %li
               =link_to "Members", membership_path(anchor: 'join-now')
-        %li
-          %ul.site-map-section-list
-            %li.site-map-section-title
+        %li.site-map-col
+          %ul
+            %li
               =link_to "About", about_path
             %li
               =link_to "The Society", about_path(anchor: 'the-society')
             %li
               =link_to "Scholarship Info", about_path(anchor: 'scholarship-info')
-        %li
-          %ul.site-map-section-list
-            %li.site-map-section-title
+        %li.site-map-contact
+          %ul
+            %li
               =link_to "Contact", contact_path
+            %li.site-map-col
+              %a.footer-email{href: "mailto:nwos@nwos.org"} nwos@nwos.org
+              %br
+              %a.footer-phone{href: "http://tel:+2067815805"} (206) 781-5805
+            %li.site-map-col
+              PO Box 51021
+              %br
+              Seattle, WA 98115-1021
+            %li.site-map-col
+              UW Botantic Gardens
+              %br
+              Center for Urban Horticulture
+              %br
+              3501 NE 41st Street
+              %br
+              Seattle, WA 98105
 
-      %ul.social-media-nav
-        %li
-          %a{href: ""}
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle.fa-stack-2x.background-icon
-              %i.fa.fa-facebook.fa-stack-1x.foreground-icon
-            %span.visuallyhidden facebook
-        %li
-          %a{href: ""}
-            %span.fa-stack.fa-lg
-              %i.fa.fa-circle.fa-stack-2x.background-icon
-              %i.fa.fa-twitter.fa-stack-1x.foreground-icon
-            %span.visuallyhidden Twitter
+      .footer-aside
+        %a.donate-link.button{ href: ''} Donate
 
-    .footer-contact-container
-      .container
-        %h6.footer-title Northwest Orchid Society
-        %p.footer-contact-column
-          UW Botantic Gardens
-          %br
-          Center for Urban Horticulture
-          %br
-          3501 NE 41st Street
-          %br
-          Seattle, WA 98105
+        %ul.social-media-nav
+          %li
+            %a{href: ""}
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle.fa-stack-2x.background-icon
+                %i.fa.fa-facebook.fa-stack-1x.foreground-icon
+              %span.visuallyhidden facebook
+          %li
+            %a{href: ""}
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle.fa-stack-2x.background-icon
+                %i.fa.fa-twitter.fa-stack-1x.foreground-icon
+              %span.visuallyhidden Twitter
 
-        %p.footer-contact-column
-          PO Box 51021
-          %br
-          Seattle, WA 98115-1021
-
-        %p.footer-contact-column
-          %a.footer-phone{href: "http://tel:+2067815805"} 
-            %i.fa.fa-phone
-            (206) 781-5805
-          %br
-          %a.footer-email{href: "mailto:nwos@nwos.org"}
-            %i.fa.fa-envelope
-            nwos@nwos.org
+        %p.copyright
+          &copy; 2014 Northwest Orchid Society
 

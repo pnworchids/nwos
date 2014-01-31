@@ -1,0 +1,36 @@
+$fg-column: 40px;             // Column Width
+$fg-gutter: 40px;             // Gutter Width
+$fg-max-columns: 12;          // Total Columns For Main Container
+
+[class*="col-"] {
+  float: left;
+
+  &.omega {
+    margin-right: 0;
+  }
+}
+
+.col-1-2 {
+  width: flex-grid(6);
+  margin-right: flex-gutter();
+}
+
+
+.table-grid {
+  display: table;
+  width: 100%;
+
+  [class*="tcell"] {
+    display: table-cell;
+  }
+
+  .tcell-1-2 {
+    width: 50%;
+  }
+  .tcell-1-3 {
+    width: 33.33%;
+  }
+  .tcell-2-3 {
+    width: 66.66%;
+  }
+}

@@ -15,7 +15,6 @@ gem 'activeadmin', github: 'gregbell/active_admin'   # Console for plebes
 gem 'tzinfo'                                         # For handling timezones and daylight savings conversions
 gem 'active_attr'                                    # What ActiveModel left out
 gem 'font-awesome-rails'                             # For using "Font Awesome" icon fonts
-gem 'neat'                                           # Lightweight grid system built ontop of the Bourbon SASS mixin library
 gem 'mandrill-api'                                   # For sending mail
 
 group :development, :test do
