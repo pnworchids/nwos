@@ -11,6 +11,9 @@ $media-queries: true;
 
 @import 'core';
 @import 'forms';
+@import 'pages/about';
+@import 'pages/contact';
 @import 'pages/home';
 @import 'pages/membership';
-@import 'pages/contact';
+@import 'events/events';
+

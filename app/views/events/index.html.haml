@@ -1,79 +1,40 @@
 -provide(:title, 'Events')
 
-.container
+.page-header
+  .photo-header
 
-  %section#events.standard-section
-    %h2.section-header.green Events
+%section#events.standard-section
+  %h2.section-header.container Upcoming Events
 
-    %ul
-      %li 
-        %p
-          March 22-24
-        %p
-          Vancouver Orchid Society Show and Sale 
-        %p
-          VanDusen Botanical Garden, Floral Hall
-          %br
-          5251 Oak St.
-          %br
-          Vancouver BC
+  .contrast-box
+    .container
 
-      %li 
-        %p
-          March 23-24
-        %p
-          Spokane Orchid Society Show
-        %p
-          Southside Community Center
-          %br
-          3151 E. 27th Ave.
-          %br
-          Spokane, WA
+      %ul.events-filters
+        %li
+          %a.active{href:''} All
+        %li
+          %a{href:''} Sales
+        %li
+          %a{href:''} Judged Shows
 
-      %li
-        %p
-          April 6-7
-        %p
-          Cherry City Orchid Society Show
-        %p
-          Lancaster Mall
-          %br
-          831 Lancaster Drive NE
-          %br
-          Salem, OR
+    
+    %ol.events-list
+      %li.container.table-grid
+        .event-date.tcell-1-3
+          %span.month Feb 
+          %span.day 5-9
 
-      %li
-        %p
-          April 6-7
-        %p
-          Northwest Orchid Society Show
-        %p
-          Sky Nursery
-          %br
-          18528 Aurora Ave. N
-          %br
-          Shoreline, WA
+        .event-title.tcell-2-3.omega
+          Northwest Flower and Garden Show
+          .event-location
+            Seattle, WA
 
-      %li
-        %p
-          April 20-21
-        %p
-          Oregon Orchid Society Show
-        %p
-          Ambridge Event Center
-          %br
-          1333 NE Martin Luther King Jr Blvd.
-          %br
-          Portland, OR
+      %li.container.table-grid
+        .event-date.tcell-1-3
+          %span.month Feb 
+          %span.day 10
 
-      %li
-        %p
-          May 4-5
-        %p
-          South Central Washington Orchid Society Show and Sale
-        %p
-          Tri-Tech Skills Center
-          %br
-          5929 W Metaline
-          %br
-          Kennewick, WA
+        .event-title.tcell-2-3.omega
+          NWOS Monthly Meeting
+          .event-location
+            Seattle, WA

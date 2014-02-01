@@ -1,0 +1,107 @@
+.events-page {
+
+/*
+ *  Photo Header
+ */
+
+  .photo-header {
+    background-image: url(../assets/photo_header_bgs/oncidium.jpg);
+  }
+
+  #events {
+    margin-bottom: 0;
+
+    .contrast-box {
+      padding-bottom: 6em;
+    }
+  }
+
+  .events-filters {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 2.5em;
+    @include Clearfix;
+
+    li {
+      float: left;
+      margin-left: 2em;
+
+      a {
+        display: block;
+        position: relative;
+        padding-top: 1em;
+        color: $text-black-light;
+
+        &:hover, &:active {
+          color: $orange;
+        }
+
+        &.active {
+          color: $orange;
+
+          &:before {
+            content: '';
+            @include position(absolute, 0px 0 0 0px);
+            background-color: $orange;
+            width: 100%;
+            height: 3px;
+          }
+        }
+      }
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+
+  .events-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      background-color: $white;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      border-top: 1px solid $off-white-dark;
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+
+    .event-date,
+    .event-title {
+      vertical-align: middle;
+    }
+
+    .event-date {
+      font-size: 1.25em;
+      color: $text-gray;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1;
+
+      span {
+        @include inline-block;
+        vertical-align: middle;
+      }
+
+      .day {
+        font-size: 1.5em;
+        margin-left: 1em;
+      }
+    }
+
+    .event-title {
+      font-size: 1.25em;
+      font-weight: bold;
+
+      .event-location {
+        font-size: 0.7em;
+        color: $text-black-light;
+      }
+    }
+  }
+}

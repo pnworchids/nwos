@@ -20,25 +20,26 @@
 (function($) {
     $(document).ready(function() {
 
-        // function initialize() {
-        //     var LatLong = new google.maps.LatLng(47.657987, -122.290565);
-        //     var mapCanvas = $('#google_map_canvas');
-        //     var mapOptions = {
-        //         center: LatLong,
-        //         zoom: 12,
-        //         mapTypeId: google.maps.MapTypeId.ROADMAP
-        //     }
+        initialize();
 
-        //     var map = new google.maps.Map(mapCanvas, mapOptions);
+        function initialize() {
+            var LatLong = new google.maps.LatLng(47.657987, -122.290565);
+            //NOTE: google.maps.Map() cannot take a jquery object
+            var mapCanvas = document.getElementById('google_map_canvas');
+            var mapOptions = {
+                center: LatLong,
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
 
-        //     var marker = new google.maps.Marker({
-        //         position: LatLong,
-        //         map: map,
-        //         title: "University of Washington Botanic Gardens, Center for Urban Horticulture"
-        //     });
-        // }
+            var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        // google.maps.event.addDomListener(window, 'load', initialize);
+            var marker = new google.maps.Marker({
+                position: LatLong,
+                map: map,
+                title: "University of Washington Botanic Gardens, Center for Urban Horticulture"
+            });
+        }
 
     });
 })( jQuery );
@@ -68,14 +69,14 @@
         });
 
         // Validate indiviual field when focus is lost
-        form.find('.required').each(function(){
-            var field = $(this);
-            field.find('input, select, textarea').blur(function(){
-                // validate form field
-                console.log($(this));
-                field.validateFields(function(){ console.log('no submitting'); });
-            });
-        });
+        // form.find('.required').each(function(){
+        //     var field = $(this);
+        //     field.find('input, select, textarea').blur(function(){
+        //         // validate form field
+        //         console.log($(this));
+        //         field.validateFields(function(){ console.log('no submitting'); });
+        //     });
+        // });
 
         return this;
     }

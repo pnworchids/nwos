@@ -14,6 +14,14 @@ $fg-max-columns: 12;          // Total Columns For Main Container
   width: flex-grid(6);
   margin-right: flex-gutter();
 }
+.col-1-3 {
+  width: flex-grid(4);
+  margin-right: flex-gutter();
+}
+.col-2-3 {
+  width: flex-grid(8);
+  margin-right: flex-gutter();
+}
 
 
 .table-grid {

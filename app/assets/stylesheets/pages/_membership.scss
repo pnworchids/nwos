@@ -1,4 +1,9 @@
 .pages-membership {
+
+/*
+ *  Photo Header
+ */
+
   .photo-header {
     background-image: url(../assets/photo_header_bgs/oncidium.jpg);
   }
@@ -11,10 +16,46 @@
       max-width: 952px;
     }
   }
+
+/*
+ *  Google Map
+ */
+
+  .google_map_canvas_container {
+
+    #google_map_canvas {
+      height: 16em;
+      margin-bottom: 1em;
+      background-color: #ccc;
+    }
+  }
+
+/*
+ *  Join Now
+ */
+
+  #join-now {
+    margin-bottom: 0;
+
+    .contrast-box {
+      padding-top: 2.2em;
+      padding-bottom: 5em;
+    }
+  }
+
+  .join-renew-paypal-form {
+    .submit-container {
+      text-align: right;
+    }
+  }
 }
 
-.membership-newsletter {
+/*
+ *  Newsletter Section
+ */
 
+.membership-newsletter {
+  
   .membership-newsletter-title {
     font-size: 1.6em;
     vertical-align: middle;

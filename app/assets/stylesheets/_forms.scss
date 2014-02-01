@@ -2,44 +2,44 @@
    Form Styles
    ========================================================================== */
 
+label {
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 0.4em;
+  color: $text-gray;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  @include box-sizing(border-box);
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  //border: 1px solid $brand-neutral;
+
+  font-size: 1em;
+  @include Montserrat;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  @include box-sizing(border-box);
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  //border: 1px solid $brand-neutral;
+  resize: none;
+
+  font-size: 1em;
+  @include Montserrat;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 .field {
   @include Clearfix;
   margin-bottom: 1em;
-
-  label {
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    margin-bottom: 0.3em;
-    //color: $brand-text-dark;
-  }
-
-  input[type="text"] {
-    @include box-sizing(border-box);
-    display: block;
-    width: 100%;
-    padding: 0.7em;
-    //border: 1px solid $brand-neutral;
-
-    font-size: 1em;
-    @include Montserrat;
-    -webkit-appearance: none;
-    border-radius: 0;
-  }
-
-  textarea {
-    @include box-sizing(border-box);
-    display: block;
-    width: 100%;
-    padding: 0.7em;
-    //border: 1px solid $brand-neutral;
-    resize: none;
-
-    font-size: 1em;
-    @include Montserrat;
-    -webkit-appearance: none;
-    border-radius: 0;
-  }
 }
 
 input[type="submit"] {
@@ -168,8 +168,8 @@ select.custom { // for ie?
 
 .dropdown {
   position: relative;
-  padding: 0.7em 2.6em 0.7em 0.7em;
-  //border: 1px solid $brand-neutral;
+  padding: 0.8em 2.7em 0.8em 0.8em;
+  border: 2px solid $white-dark;
   background-color: white;
   line-height: 1;
 
@@ -185,9 +185,10 @@ select.custom { // for ie?
       display: block;
       position: relative;
       text-align: center;
-      font-size: 1.2em;
-      top: 0.5em;
-      //color: $brand-neutral-dark;
+      font-size: 1.3em;
+      top: 50%;
+      margin-top: -0.5em;
+      color: $white-darker;
     }
   }
 
@@ -196,19 +197,11 @@ select.custom { // for ie?
   }
 }
 
-.faux-submit-btn {
-  display: block;
-  padding: 1em;
-  //background-color: $brand-neutral-lighter;
-  font-size: 1.2em;
-  text-align: center;
-  text-transform: uppercase;
-  //color: $brand-text-dark;
-  @include transition (all 0.4s ease);
-  border-radius: 3px;
+.submit-container {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
 
-  &:hover, :active {
-    //background-color: $brand-neutral-light;
-    //color: $brand-text-dark;
-  }
+.faux-submit-btn {
+  @include Button;
 }

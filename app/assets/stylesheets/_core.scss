@@ -15,6 +15,10 @@ body {
 a {
   text-decoration: none;
   color: $blue;
+
+  &:hover, &:active {
+    color: $blue-light;
+  }
 }
 
 .main {
@@ -28,13 +32,18 @@ a {
   @include Clearfix;
 
   @include media(mobile-tablet) {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   @include media(desktop) {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  &.table-grid {
+    box-sizing: border-box;
+    max-width: 984px;
   }
 }
 
@@ -358,20 +367,23 @@ footer.footer {
 }
 
 /*
- *  Sections & common page elements
- */
-
-.standard-section {
-  margin-bottom: 3.5em;
-
-  p {
-    line-height: 1.5;
-  }
-}
-
-/*
  *  Headers
  */
+
+.section-header {
+  font-size: 2em;
+  color: $magenta-dark;
+}
+
+.section-secondary-header {
+  font-size: 1.3em;
+  color: $text-black-light;
+}
+
+.gray-section-header {
+  color: $text-gray;
+  text-shadow: 1px 2px 0 rgba(black, 0.1);
+}
 
 .page-header {
   margin-bottom: 3.6em;
@@ -383,16 +395,76 @@ footer.footer {
   }
 }
 
-.section-header {
-  font-size: 2em;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: $magenta-dark;
+/*
+ *  Sections & common page elements
+ */
+
+.standard-section {
+  margin-bottom: 3.5em;
+
+  &.last {
+    margin-bottom: 7em;
+  }
+
+  .secondary-section {
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    &.last {
+      margin-bottom: 0;
+    }
+  }
+
+  // standard-section headers
+
+  .section-header {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .section-secondary-header {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  // standard-section tags
+
+  p {
+    line-height: 1.7;
+    margin: 0 0 1em;
+
+    a:hover, a:active {
+      border-bottom: 1px dotted $blue-light;
+    }
+  }
 }
 
-.gray-section-header {
-  color: $text-gray;
-  text-shadow: 1px 2px 0 rgba(black, 0.1);
+.contrast-box {
+  background-color: $off-white;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 1em;
+    @include position(absolute, 0px 0 0 0px);
+    @include linear-gradient(to bottom, rgba($off-white-dark, 0.1), transparent, $fallback: transparent);
+  }
+}
+
+.padding-box {
+  padding: 1em;
+  background-color: $off-white;
+}
+
+.google_map_canvas_container {
+  text-align: center;
+
+  a.get-directions {
+    i {
+      margin-left: 0.5em;
+    }
+  }
 }
 
 /*
@@ -400,20 +472,5 @@ footer.footer {
  */
 
 a.button {
-  font-size: 1.1em;
-
-  @include inline-block;
-  background-color: $magenta;
-  padding: 0.6em 1em;
-  border-radius: 3px;
-  @include transition(all 0.3s ease);
-
-  color: $white-dark;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  &:hover, &:active, &:focus {
-    background-color: $magenta-light;
-    color: white;
-  }
+  @include Button;
 }

@@ -9,6 +9,7 @@ $deep-magenta: #300019;
 $orange: #fe5e3a;
 
 $blue: #00356d;
+$blue-light: lighten( $blue, 10% );
 
 $onyx: #303030;
 $onyx-light: lighten( $onyx, 4% );
@@ -24,6 +25,8 @@ $off-white-dark: darken( $off-white, 5% );
 $off-white-darker: darken( $off-white, 15% );
 
 $text-black: #404040;
+$text-black-light: lighten( $text-black, 15% );
+
 $text-gray: #9a9a9a;
 
 
@@ -33,6 +36,31 @@ $text-gray: #9a9a9a;
 
 @mixin Montserrat {
   font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+}
+
+@mixin Button($display: inline-block, $size: 1.1em) {
+
+  @if $display == inline-block {
+    @include inline-block;
+  }
+  @else {
+    display: $display;
+  }
+
+  font-size: $size;
+  background-color: $magenta;
+  padding: 0.6em 1em;
+  border-radius: 3px;
+  @include transition(all 0.3s ease);
+
+  color: $off-white;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover, &:active, &:focus {
+    background-color: $magenta-light;
+    color: white;
+  }
 }
 
 @mixin ImageReplacement {
