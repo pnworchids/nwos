@@ -1,0 +1,17 @@
+-if event.start_datetime.to_date === event.end_datetime.to_date
+
+  %span.month= event.start_datetime.strftime("%b")
+  %span.day= event.start_datetime.strftime("%e").strip
+
+-elsif event.start_datetime.month != event.end_datetime.month
+
+  %span.month= event.start_datetime.strftime("%b")
+  %span.day= "#{event.start_datetime.strftime("%e").strip}—"
+  %br
+  %span.month= event.end_datetime.strftime("%b")
+  %span.day= event.end_datetime.strftime("%e").strip
+
+-else
+
+  %span.month= event.start_datetime.strftime("%b")
+  %span.day= "#{event.start_datetime.strftime("%e").strip}—#{event.end_datetime.strftime("%e").strip}"

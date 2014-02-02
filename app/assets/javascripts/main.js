@@ -19,16 +19,26 @@
 // GOOGLE MAPS
 (function($) {
     $(document).ready(function() {
+        $('[data-google-map]').simpleGMap();
+    });
 
-        initialize();
+    $.fn.simpleGMap = function() {
+        var maps = this;
+        maps.each(function() {
+            var mapTitle = $.trim($(this).text());
+            var lat = $(this).data('lat');
+            var lng = $(this).data('lng');
+            var mapZoom = (typeof $(this).data('zoom') === "undefined") ? 12 : $(this).data('zoom');
 
-        function initialize() {
-            var LatLong = new google.maps.LatLng(47.657987, -122.290565);
+            console.log($(this).data('zoom'));
+            console.log(mapZoom);
+
+            var LatLong = new google.maps.LatLng(lat, lng);
             //NOTE: google.maps.Map() cannot take a jquery object
-            var mapCanvas = document.getElementById('google_map_canvas');
+            var mapCanvas = $(this).get(0);
             var mapOptions = {
                 center: LatLong,
-                zoom: 12,
+                zoom: mapZoom,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
 
@@ -37,11 +47,11 @@
             var marker = new google.maps.Marker({
                 position: LatLong,
                 map: map,
-                title: "University of Washington Botanic Gardens, Center for Urban Horticulture"
+                title: mapTitle
             });
-        }
+        });
+    }
 
-    });
 })( jQuery );
 
 // CUSTOM FORM PLUGINS

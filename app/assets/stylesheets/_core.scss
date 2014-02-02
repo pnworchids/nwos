@@ -370,6 +370,37 @@ footer.footer {
  *  Headers
  */
 
+.page-header {
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: $magenta-dark;
+
+  h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    margin: 0;
+    @include inline-block;
+  }
+
+  .breadcrumbs {
+    margin: 0;
+    color: $text-gray;
+    font-size: 0.6em;
+    @include inline-block;
+
+    a {
+      color: $text-gray;
+      @include inline-block;
+      margin-right: 0.2em;
+
+      &:hover, &:active {
+        color: $text-black-light;
+        border-bottom: 1px dotted $text-black-light;
+      }
+    }
+  }
+}
+
 .section-header {
   font-size: 2em;
   color: $magenta-dark;
@@ -385,18 +416,8 @@ footer.footer {
   text-shadow: 1px 2px 0 rgba(black, 0.1);
 }
 
-.page-header {
-  margin-bottom: 3.6em;
-
-  .photo-header {
-    height: 65px;
-    background-position: center;
-    background-size: cover;
-  }
-}
-
 /*
- *  Sections & common page elements
+ *  Sections & Containers
  */
 
 .standard-section {
@@ -452,13 +473,61 @@ footer.footer {
   }
 }
 
+.white-box {
+  background-color: $white;
+}
+
 .padding-box {
   padding: 1em;
   background-color: $off-white;
 }
 
+/*
+ *  Common Page Elements
+ */
+
+.page-banner {
+  margin-bottom: 3.6em;
+
+  .photo-banner {
+    height: 65px;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+ul.tags {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0 2em;
+  @include Clearfix;
+
+  li {
+    float: left;
+
+    a {
+      font-size: 0.7em;
+      display: block;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+      background-color: $text-gray;
+      padding: 0.5em 0.9em;
+      border-radius: 6px;
+
+      &:hover, &:active {
+        background-color: $orange;
+      }
+    }
+  }
+}
+
 .google_map_canvas_container {
   text-align: center;
+
+  .google_map_canvas {
+    background-color: #ccc;
+  }
 
   a.get-directions {
     i {

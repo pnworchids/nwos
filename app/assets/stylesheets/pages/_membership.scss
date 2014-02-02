@@ -4,11 +4,11 @@
  *  Photo Header
  */
 
-  .photo-header {
+  .photo-banner {
     background-image: url(../assets/photo_header_bgs/oncidium.jpg);
   }
 
-  .page-header {
+  .page-banner {
     background-color: $off-white;
 
     .container {
@@ -23,10 +23,9 @@
 
   .google_map_canvas_container {
 
-    #google_map_canvas {
+    .google_map_canvas {
       height: 16em;
       margin-bottom: 1em;
-      background-color: #ccc;
     }
   }
 

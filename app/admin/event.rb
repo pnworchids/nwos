@@ -1,7 +1,7 @@
 ActiveAdmin.register Event do
 
   permit_params :name, :venue, :street_address, :city, :state_province, :zip_code, :publish_at,
-    tags_attributes: [:id, :starts_at, :ends_at, :_destroy]
+    :geocode_lat, :geocode_lng, :admission_info, :description, tags_attributes: [:id, :starts_at, :ends_at, :_destroy]
 
   sidebar "Event Dates", only: [:show, :edit] do
     ul do

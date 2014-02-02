@@ -1,0 +1,74 @@
+-provide(:title, @event.name)
+
+.page-banner
+  .photo-banner
+
+.page-header.container
+  %p.breadcrumbs
+    = link_to "Events", events_path, rel: 'up'
+    %i.fa.fa-angle-right
+  %h2
+    = @event.name
+
+.contrast-box
+  .container
+    %ul.tags
+      %li 
+        %a{href: ''} Sales
+
+  .event-information.white-box.container.table-grid
+    .tcell-1-2
+      .table-grid
+        .tcell-1-3
+          %h3.table-header Date
+
+        .tcell-2-3
+          %p
+            = render 'date_span_long', event: @event
+
+      .table-grid
+        .tcell-1-3
+          %h3.table-header Hours
+
+        .tcell-2-3
+          = render 'hours', event: @event
+
+      .table-grid
+        .tcell-1-3
+          %h3.table-header Admission
+
+        .tcell-2-3
+          %p
+            -if @event.admission_info.present?
+              =@event.admission_info.html_safe
+            -else
+              Free
+
+
+    .tcell-1-2
+      %h3.table-header.location-header Location
+
+      %p
+        =@event.venue
+        %br
+        =@event.street_address
+        %br
+        =@event.city
+        ="#{@event.state_province},"
+        =@event.zip_code
+
+      %p
+        %a{href: get_directions_link("800 Convention Center Place, Seattle WA 98101"), target: '_blank'} 
+          Get Directions
+          %i.fa.fa-angle-right
+
+  - if @event.geocode_lat.present? && @event.geocode_lng.present?
+    .container.white-box
+      .google_map_canvas{data: {:"google-map" => true, :lat => @event.geocode_lat, :lng => @event.geocode_lng, :zoom => 15}}
+        =@event.venue
+
+
+
+.container.event-additional-information
+  %section.event-description.standard-section
+    %p=@event.description

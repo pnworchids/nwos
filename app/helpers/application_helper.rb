@@ -76,4 +76,9 @@ module ApplicationHelper
   def construct_tweet(path = "", text = ENV["TWEET_COPY_GENERAL"])
     return "https://twitter.com/share?url="+u(get_url(path))+"&text="+text
   end
+
+  def get_directions_link(addr)
+    str = addr.gsub!(/\s+/, "+")
+    return 'https://maps.google.com/maps?saddr=Current+Location&daddr='+str
+  end
 end

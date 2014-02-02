@@ -4,9 +4,16 @@
  *  Photo Header
  */
 
-  .photo-header {
+  .photo-banner {
     background-image: url(../assets/photo_header_bgs/oncidium.jpg);
   }
+}
+
+/*
+ *  Events Index Styles
+ */
+
+.events-index {
 
   #events {
     margin-bottom: 0;
@@ -102,6 +109,57 @@
         font-size: 0.7em;
         color: $text-black-light;
       }
+    }
+  }
+}
+
+/*
+ *  Events Show Page
+ */
+
+.events-show {
+
+  .event-information {
+    font-size: 0.9em;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    line-height: 1.7;
+
+    .table-header {
+      font-size: 1em;
+      text-transform: uppercase;
+      color: $text-gray;
+    }
+
+    .event-hours {
+      span {
+        @include inline-block;
+      }
+
+      .wday {
+        width: 3.4em;
+        color: $text-gray;
+      }
+    }
+
+    .location-header {
+      margin-bottom: 2em;
+    }
+
+    a:hover, a:active {
+      border-bottom: 1px dotted $blue-light;
+    }
+  }
+
+  .google_map_canvas {
+    height: 420px;
+  }
+
+  .event-additional-information {
+    padding-bottom: 7em;
+
+    .event-description {
+      padding-top: 2em;
     }
   }
 }

@@ -1,7 +1,7 @@
 -provide(:title, 'Membership')
 
-.page-header
-  .photo-header
+.page-banner
+  .photo-banner
 
 .container
 
@@ -20,10 +20,12 @@
 
       .col-1-2.omega
         .google_map_canvas_container.padding-box
-          #google_map_canvas
-          %a.get-directions{href: 'https://maps.google.com/maps?q=3501+NE+41st+Street++Seattle,+WA+98105&ie=UTF-8&hq=&hnear=0x5490149af97454c1:0xc81512cfe09c20d0,3501+NE+41st+St,+Seattle,+WA+98105&gl=us&daddr=3501+NE+41st+St,+Seattle,+WA+98105&ei=JhDsUuepBZDeoAS1g4HwBg&ved=0CCcQwwUwAA'} 
+          .google_map_canvas{data: {:"google-map" => true, :lat => 47.657987, :lng => -122.290565}}
+            University of Washington Botanic Gardens, Center for Urban Horticulture
+          %a.get-directions{href: get_directions_link('3501 NE 41st Street, Seattle, WA 98105'), target: '_blank'} 
             Get Directions
             %i.fa.fa-angle-right
+
 
     %section.secondary-section
       %h3.section-secondary-header August Picnic

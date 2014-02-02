@@ -2,6 +2,8 @@ ActiveAdmin.register EventDate do
 
   belongs_to :event
   navigation_menu :event
+
+  permit_params :starts_at, :ends_at, :event_id
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
