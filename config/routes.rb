@@ -8,6 +8,7 @@ NwosWeb::Application.routes.draw do
   get '/contact', to: 'pages#contact', as: 'contact'
 
   get '/admin/events/test' => 'admin/events#test', :as => :admin_events_test
+  get '/events/category/:id', :to => 'events#by_category', :as => :events_category
   resources :events
 
   devise_for :admin_users, ActiveAdmin::Devise.config

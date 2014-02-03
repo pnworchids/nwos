@@ -13,8 +13,9 @@
 .contrast-box
   .container
     %ul.tags
-      %li 
-        %a{href: ''} Sales
+      - @event.event_categories.each do |c|
+        %li 
+          =link_to c.category.name, events_category_path(c.category.id)
 
   .event-information.white-box.container.table-grid
     .tcell-1-2

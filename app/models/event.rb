@@ -1,6 +1,9 @@
 class Event < ActiveRecord::Base
   has_many :event_dates
   accepts_nested_attributes_for :event_dates, allow_destroy: true
+  has_many :event_categories
+  accepts_nested_attributes_for :event_categories, allow_destroy: true
+  has_many :categories, :through => :event_categories
 
   validates :name, :street_address, :city, :state_province, presence: true
   validates :name, length: { maximum: 50 }

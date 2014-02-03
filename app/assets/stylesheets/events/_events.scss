@@ -13,7 +13,8 @@
  *  Events Index Styles
  */
 
-.events-index {
+.events-index,
+.events-by_category {
 
   #events {
     margin-bottom: 0;
@@ -110,6 +111,11 @@
         color: $text-black-light;
       }
     }
+  }
+
+  .no-events-message {
+    color: $text-gray;
+    font-style: italic;
   }
 }
 

@@ -11,20 +11,29 @@
 
       %ul.events-filters
         %li
-          %a.active{href:''} All
-        %li
-          %a{href:''} Sales
-        %li
-          %a{href:''} Judged Shows
+          =link_to "All", events_path, class: active_if(action: 'index')
+        -@categories.each do |c|
+          %li
+            =link_to c.name, events_category_path(c.id), class: active_if(action: 'by_category', id: c.id.to_s)
 
-    
-    %ol.events-list
-      - @events.each do |e|
-        %li.container.table-grid
-          .event-date.tcell-1-3
-            = render 'date_span_short', event: e
+    -if @events.count > 0
+      %ol.events-list
+        - @events.each do |e|
+          %li.container.table-grid
+            .event-date.tcell-1-3
+              = render 'date_span_short', event: e
 
-          .event-title.tcell-2-3.omega
-            = link_to e.name, event_path(e)
-            .event-location
-              = "#{e.city}, #{e.state_province}"
+            .event-title.tcell-2-3.omega
+              = link_to e.name, event_path(e)
+              .event-location
+                = "#{e.city}, #{e.state_province}"
+
+    -else
+      .container
+        %p.no-events-message
+          -if @category.present?
+            There are no
+            =@category.name
+            at this time.
+          -else
+            There are no published events at this time.
