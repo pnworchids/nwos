@@ -16,6 +16,7 @@ class ContactMessage
 
   @@contacts = {
     general: { name: "General Inqueries", email: "nwos@nwos.org" },
+    membership: { name: "Membership", email: "cory.mike@gmail.com"},
     newsletter: { name: "Newsletter Editor", email: "newsletter@nwos.org"}, 
     president: { name: "President", email: "president@nwos.org"}, 
     publicity: { name: "Publicity", email: "pubilicy@nwos.org"}, 
