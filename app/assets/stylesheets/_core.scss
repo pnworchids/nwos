@@ -204,6 +204,10 @@ header.header {
           color: white;
           background-color: $onyx-lighter;
         }
+
+        &.nav-active {
+          color: white;
+        }
       }
     }
 

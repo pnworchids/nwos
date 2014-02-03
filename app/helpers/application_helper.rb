@@ -18,6 +18,12 @@ module ApplicationHelper
     str.gsub(/[^0-9a-z ]/i, '').gsub(/\s+/, '-').downcase
   end
 
+  def active_if(options)
+    if params.merge(options) == params
+      'nav-active'
+    end
+  end
+
   # ------- COLUMNS & LISTS
 
   def get_item_class(i, arr)
