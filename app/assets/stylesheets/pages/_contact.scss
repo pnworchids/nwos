@@ -1,41 +1,35 @@
 .pages-contact {
 
-//  @include media($mobile) {
-//    .contact-page-container {
-//      padding: 0;
-//    }
+/*
+ *  Photo Header
+ */
 
-//    .contact-info-section{
-//      padding-left: 1em;
-//      padding-right: 1em;
-//    }
+  .photo-banner {
+    background-image: url(../assets/photo_header_bgs/oncidium.jpg);
+  }
 
-//    .contact-form-section {
-//      padding: 2em 1em 4em;
-//      margin-bottom: 0;
-//      background-color: $brand-neutral-lighter;
+  .contact-information {
 
-//      .faux-submit-btn {
-//        background-color: $brand-neutral-light;
-//        &:hover, &:active {
-//          background-color: $brand-neutral;
-//        }
-//      }
-//    }
-//  }
+    @include media(desktop-tablet) {
 
-  .contact-info {
-    @include Clearfix;
+      padding-top: 5.8em;
+      font-size: 0.8em;
 
-    p {
-      margin-bottom: 0;
-    }
-
-    .contact-phone,
-    .contact-email {
-      i {
-        padding-right: 0.4em;
+      .section-header {
+        font-size: 1.3em;
+        margin-bottom: 0.5em;
+        color: $text-black-light;
       }
+
+      .secondary-section {
+        margin: 2.5em 0;
+      }
+    }
+  }
+
+  .new_contact_message {
+    .faux-submit-btn {
+      @include ButtonLarge;
     }
   }
 }

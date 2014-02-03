@@ -5,8 +5,8 @@ $media-queries: true;
 @import 'normalize';
 @import 'font-awesome';
 @import 'bourbon';
-@import 'bourbon-grid';
 @import 'mixins';
+@import 'bourbon-grid';
 @import 'helpers';
 
 @import 'core';

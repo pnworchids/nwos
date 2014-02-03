@@ -1,21 +1,23 @@
 -provide(:title, 'Contact')
 
-.container.contact-page-container.row-right
+.page-banner
+  .photo-banner
 
-  %section.standard-aside.contact-info-section.col-1-third.omega
-    .aside-block.contact-info
-      %h2.section-header Contact Information
-      %p
-        %a.contact-phone{href: "http://tel:+2067815805"} 
-          %i.fa.fa-phone
-          (206) 781-5805
-        %br
-        %a.contact-email{href: "mailto:nwos@nwos.org"} 
-          %i.fa.fa-envelope
-          nwos@nwos.org
+.container.contact-page-container.grid-direction-right
 
-    .aside-block
-      %h3.aside-header Mailing Address
+  %section.contact-information.standard-section.col-1-3.omega
+    %h2.section-header Contact Information
+    %p
+      %a.contact-email{href: "mailto:nwos@nwos.org"} 
+        %i.fa.fa-envelope
+        nwos@nwos.org
+      %br
+      %a.contact-phone{href: "http://tel:+2067815805"} 
+        %i.fa.fa-phone
+        (206) 781-5805
+
+    .secondary-section
+      %h3.section-secondary-header Mailing Address
       %p
         Northwest Orchid Society
         %br
@@ -23,8 +25,8 @@
         %br 
         Seattle, WA 98115-1021
 
-    .aside-block
-      %h3.aside-header Meeting Location
+    .secondary-section
+      %h3.section-secondary-header Meeting Location
       %p
         UW Botantic Gardens
         %br
@@ -34,7 +36,7 @@
         %br
         Seattle, WA 98105
 
-  %section.standard-section.contact-form-section.col-2-third
+  %section.standard-section.last.col-2-3
     %h2.section-header Send Us a Message
 
     = render "contact_messages/form" 

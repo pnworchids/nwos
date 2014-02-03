@@ -15,12 +15,17 @@ input[type="text"] {
   display: block;
   width: 100%;
   padding: 0.8em;
-  //border: 1px solid $brand-neutral;
+  border: 2px solid $white-dark;
 
   font-size: 1em;
   @include Montserrat;
   -webkit-appearance: none;
   border-radius: 0;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $pale-blue;
+  }
 }
 
 textarea {
@@ -28,13 +33,18 @@ textarea {
   display: block;
   width: 100%;
   padding: 0.8em;
-  //border: 1px solid $brand-neutral;
+  border: 2px solid $white-dark;
   resize: none;
 
   font-size: 1em;
   @include Montserrat;
   -webkit-appearance: none;
   border-radius: 0;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $pale-blue;
+  }
 }
 
 .field {
@@ -55,14 +65,13 @@ input[type="submit"] {
 
   input[type="text"], 
   textarea {
-    //border-color: $warning-color;
+    border-color: $orange-lighter;
     margin: 0;
   }
 
   .field_error_message {
-    //background-color: $warning-color-lighter;
-    //color: $warning-color-dark;
-    padding: 0.8em;
+    color: $orange;
+    padding: 0.5em 0 0.8em;
     font-size: 0.9em;
   }
 }
@@ -194,6 +203,11 @@ select.custom { // for ie?
 
   &.value-selected {
     //color: black;
+  }
+
+  &.focus {
+    outline: none;
+    border: 2px solid $pale-blue;
   }
 }
 

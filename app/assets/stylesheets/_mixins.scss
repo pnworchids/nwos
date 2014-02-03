@@ -7,9 +7,14 @@ $magenta-darker: darken( $magenta, 20% );
 $deep-magenta: #300019;
 
 $orange: #fe5e3a;
+$orange-light: lighten( $orange, 10% );
+$orange-lighter: lighten( $orange, 20% );
 
 $blue: #00356d;
 $blue-light: lighten( $blue, 10% );
+
+$pale-blue: #8CB4D3;
+$green: #1ABC9C;
 
 $onyx: #303030;
 $onyx-light: lighten( $onyx, 4% );
@@ -28,6 +33,7 @@ $text-black: #404040;
 $text-black-light: lighten( $text-black, 15% );
 
 $text-gray: #9a9a9a;
+$text-gray-light: lighten( $text-gray, 15% );
 
 
 @mixin Goudy {
@@ -61,6 +67,11 @@ $text-gray: #9a9a9a;
     background-color: $magenta-light;
     color: white;
   }
+}
+
+@mixin ButtonLarge {
+  @include Button(block, 1.5em);
+  text-align: center;
 }
 
 @mixin ImageReplacement {
@@ -136,10 +147,10 @@ $text-gray: #9a9a9a;
 
 @mixin media($point) {
   $bp-mobile-tablet: "(max-width: 768px)";
-  $bp-mobile-only: "(max-width: 520px)";
-  $bp-tablet-only: "(min-width: 521px) and (max-width: 768px)";
+  $bp-mobile-only: "(max-width: 620px)";
+  $bp-tablet-only: "(min-width: 621px) and (max-width: 768px)";
 
-  $bp-tablet-desktop: "(min-width: 521px)";
+  $bp-tablet-desktop: "(min-width: 621px)";
   $bp-desktop: "(min-width: 769px)";
 
   @if ($media-queries) {

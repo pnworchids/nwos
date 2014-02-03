@@ -543,3 +543,7 @@ ul.tags {
 a.button {
   @include Button;
 }
+
+a.button-large {
+  @include ButtonLarge;
+}
