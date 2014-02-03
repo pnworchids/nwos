@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require modernizr.custom.2.7.1
 //= require bootstrap
+//= require responsiveslides.min
 //= require main

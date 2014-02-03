@@ -74,8 +74,8 @@ $text-gray-light: lighten( $text-gray, 15% );
   text-align: center;
 }
 
-@mixin ImageReplacement {
-  background-color: transparent;
+@mixin ImageReplacement($bgcolor: transparent) {
+  background-color: $bgcolor;
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */

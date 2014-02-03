@@ -111,14 +111,23 @@ header.header {
       float: left;
       @include Goudy;
       color: #a4a4a4;
+      background-repeat: no-repeat;
 
       @include media(desktop) {
         display: block;
         @include ImageReplacement;
         @include retina-image(logo, 222px 55px);
-        background-repeat: none;
         width: 222px;
         height: 55px;
+      }
+
+      @include media(mobile-tablet) {
+        display: block;
+        @include ImageReplacement;
+        @include retina-image(logo_small, 113px 35px);
+        width: 113px;
+        height: 35px;
+        margin-top: 7px;
       }
     }
   }
@@ -547,3 +556,4 @@ a.button {
 a.button-large {
   @include ButtonLarge;
 }
+

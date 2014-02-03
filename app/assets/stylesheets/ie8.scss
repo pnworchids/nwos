@@ -14,3 +14,16 @@ $media-queries: false;
 @import 'pages/home';
 @import 'pages/membership';
 @import 'pages/contact';
+
+// use the actual image instead of the background 'cover' 
+// since background size is not supported
+
+.home-featured {
+  .home-featured-bg {
+    visibility: visible;
+  }
+
+  .home-featured-bg-cover {
+    display: none;
+  }
+}
