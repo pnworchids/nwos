@@ -15,11 +15,11 @@ class ContactMessage
   # validates :subject, length: {maximum: 78}
 
   @@contacts = {
-    general: { name: "General Inqueries", email: "nwos@nwos.org" },
+    general: { name: "General Inquiries", email: "nwos@nwos.org" },
     membership: { name: "Membership", email: "cory.mike@gmail.com"},
-    newsletter: { name: "Newsletter Editor", email: "newsletter@nwos.org"}, 
-    president: { name: "President", email: "president@nwos.org"}, 
-    publicity: { name: "Publicity", email: "pubilicy@nwos.org"}, 
+    newsletter: { name: "Newsletter Editor", email: "ddrisch@aol.com"}, 
+    president: { name: "President", email: "nwos@nwos.org"}, 
+    publicity: { name: "Publicity", email: "nwos@nwos.org"}, 
     webmaster: { name: "Webmaster", email: "webmaster@nwos.org"}
   }
 
