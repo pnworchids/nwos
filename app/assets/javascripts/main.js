@@ -18,7 +18,7 @@
                 timeout: 5000,
                 pager: true,
                 nav: true,
-                pause: false,
+                pause: true,
                 prevText: '<i class="fa fa-chevron-left"></i> <span>Previous</span>',
                 nextText: '<span>Next</span> <i class="fa fa-chevron-right"></i>'
             });
