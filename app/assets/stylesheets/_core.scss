@@ -236,7 +236,7 @@ header.header {
 
 footer.footer {
   background-color: $deep-magenta;
-  color: $white-darker;
+  color: $gray-dark;
 
   .container {
     @include font-smoothing;
@@ -278,7 +278,7 @@ footer.footer {
       margin-bottom: 0.8em;
 
       a {
-        color: $white-darker;
+        color: $gray-dark;
         @include transition(color 0.3s ease);
 
         &:hover, &:active {
@@ -348,11 +348,11 @@ footer.footer {
       }
 
       .foreground-icon {
-        color: $white-darker;
+        color: $gray-dark;
         @include transition(color 0.35s ease);
       }
       .background-icon {
-        color: $white-darker;
+        color: $gray-dark;
         opacity: 0.2;
         @include transition(opacity 0.35s ease);
       }
@@ -370,7 +370,7 @@ footer.footer {
     .copyright {
       clear: right;
       font-size: 0.7em;
-      @include rgba-fallback(color, $white-darker, 0.6);
+      @include rgba-fallback(color, $gray-dark, 0.6);
 
       @include media(desktop) {
         text-align: right;

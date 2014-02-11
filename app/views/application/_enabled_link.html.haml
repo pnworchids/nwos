@@ -1,0 +1,4 @@
+- if bool
+  = link_to text, link, class: "#{options[:class]} #{options[:enabled_class]}", target: options[:target]
+-else
+  %span{class: "active #{options[:class]} #{options[:disabled_class]}"}=text

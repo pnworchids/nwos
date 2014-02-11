@@ -7,6 +7,7 @@ ActiveAdmin.register Event do
     ul do
       li link_to "Dates", admin_event_event_dates_path(event)
       li link_to "Categories", admin_event_event_categories_path(event)
+      li link_to "Vendors", admin_event_event_vendors_path(event)
     end
   end
 

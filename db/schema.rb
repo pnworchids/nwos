@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203212408) do
+ActiveRecord::Schema.define(version: 20140211162034) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 20140203212408) do
     t.datetime "updated_at"
   end
 
+  create_table "event_vendors", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "vendor_id"
+    t.text     "additional_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "venue"
@@ -81,6 +89,15 @@ ActiveRecord::Schema.define(version: 20140203212408) do
     t.string   "geocode_lng"
     t.text     "admission_info"
     t.text     "description"
+  end
+
+  create_table "vendors", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "url"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
