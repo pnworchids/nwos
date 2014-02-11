@@ -2,7 +2,6 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.order_by_date
-    @categories = Category.order(:name)
   end
 
   def show
@@ -11,8 +10,7 @@ class EventsController < ApplicationController
 
   def by_category
     @category = Category.find(params[:id])
-    @events = @category.events
-    @categories = Category.order(:name)
+    @events = @category.events.order_by_date
     render 'index'
   end
 
