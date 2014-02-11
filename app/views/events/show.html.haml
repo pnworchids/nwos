@@ -52,6 +52,9 @@
       %p
         =@event.venue
         %br
+        -if @event.venue_space.present?
+          =@event.venue_space
+          %br
         =@event.street_address
         %br
         =@event.city
@@ -65,11 +68,27 @@
 
   - if @event.geocode_lat.present? && @event.geocode_lng.present?
     .container.white-box
-      .google_map_canvas{data: {:"google-map" => true, :lat => @event.geocode_lat, :lng => @event.geocode_lng, :zoom => 15}}
+      .google_map_canvas{data: {:"google-map" => true, :lat => @event.geocode_lat, :lng => @event.geocode_lng, :zoom => 14}}
         =@event.venue
 
 
 
 .container.event-additional-information
   %section.event-description.standard-section
-    =@event.description.html_safe
+    %p=@event.description.html_safe
+
+  %section.event-vendors.standard-section
+    -if @event.event_vendors.present?
+      %h3.event-section-header
+        ="Vendor".pluralize(@event.event_vendors.count)
+      %ul
+        -@event.event_vendors.each do |v|
+          %li
+            %h4.vendor-header
+              =link_to v.vendor.name, v.vendor.url, class: 'vendor-name', target: '_blank'
+              %br
+              %span.vendor-location=v.vendor.location
+            -if v.vendor.description.present?
+              %p.vendor-description=v.vendor.description
+            -if v.additional_info.present?
+              %p.vendor-additional=v.additional_info

@@ -15,7 +15,7 @@ input[type="text"] {
   display: block;
   width: 100%;
   padding: 0.8em;
-  border: 2px solid $white-dark;
+  border: 2px solid $gray;
 
   font-size: 1em;
   @include Montserrat;
@@ -33,7 +33,7 @@ textarea {
   display: block;
   width: 100%;
   padding: 0.8em;
-  border: 2px solid $white-dark;
+  border: 2px solid $gray;
   resize: none;
 
   font-size: 1em;
@@ -178,7 +178,7 @@ select.custom { // for ie?
 .dropdown {
   position: relative;
   padding: 0.8em 2.7em 0.8em 0.8em;
-  border: 2px solid $white-dark;
+  border: 2px solid $gray;
   background-color: white;
   line-height: 1;
 
@@ -197,7 +197,7 @@ select.custom { // for ie?
       font-size: 1.3em;
       top: 50%;
       margin-top: -0.5em;
-      color: $white-darker;
+      color: $gray-dark;
     }
   }
 

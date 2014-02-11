@@ -24,6 +24,10 @@ module ApplicationHelper
     end
   end
 
+  def enabled_link(bool, text, link, options = {})
+    render 'application/enabled_link', bool: bool, text: text, link: link, options: options
+  end
+
   # ------- COLUMNS & LISTS
 
   def get_item_class(i, arr)

@@ -22,8 +22,10 @@ $onyx-lighter: lighten( $onyx, 8% );
 $onyx-dark: darken( $onyx, 8% );
 
 $white: #fefefe;
-$white-dark: darken( $white, 10% );
-$white-darker: darken( $white, 20% );
+$white-dark: #fbfbfb;
+
+$gray: darken( $white, 10% );
+$gray-dark: darken( $white, 20% );
 
 $off-white: #f9f8f7;
 $off-white-dark: darken( $off-white, 5% );
@@ -34,6 +36,7 @@ $text-black-light: lighten( $text-black, 15% );
 
 $text-gray: #9a9a9a;
 $text-gray-light: lighten( $text-gray, 15% );
+$text-gray-lighter: lighten( $text-gray, 25% );
 
 
 @mixin Goudy {

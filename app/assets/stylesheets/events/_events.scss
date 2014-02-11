@@ -72,7 +72,7 @@
       background-color: $white;
       padding-top: 2em;
       padding-bottom: 2em;
-      border-top: 1px solid $off-white-dark;
+      border-top: 1px solid $off-white;
 
       &:first-child {
         border-top: 0;
@@ -109,6 +109,16 @@
       .event-location {
         font-size: 0.7em;
         color: $text-black-light;
+      }
+    }
+
+    li.past-event {
+      background-color: $white-dark;
+
+      .event-date,
+      .event-title,
+      .event-location {
+        color: $text-gray-lighter;
       }
     }
   }
@@ -158,23 +168,62 @@
   }
 
   .google_map_canvas {
-    height: 420px;
+    height: 300px;
   }
 
   .event-additional-information {
+    padding-top: 3em;
     padding-bottom: 7em;
-
-    .event-description {
-      padding-top: 2em;
-    }
 
     ul {
       list-style-type: none;
       padding: 0;
+      margin: 0;
 
       li {
         margin: 0.5em 0;
       }
+    }
+
+    .standard-section {
+      margin-bottom: 2.5em;
+    }
+  }
+
+  .event-section-header {
+    font-size: 1.6em;
+    margin: 0 0 0.5em;
+    color: $magenta-dark;
+  }
+
+/*
+ *  Event Vendors Section
+ */
+
+  .event-vendors {
+
+    ul {
+      li {
+        margin: 1.5em 0;
+      }
+    }
+
+    .vendor-header {
+      font-size: 0.8em;
+      margin: 0 0 0.7em;
+    }
+
+    .vendor-name {
+      font-size: 1.4em;
+    }
+
+    .vendor-location {
+      color: $text-gray;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 0.5em;
     }
   }
 }
