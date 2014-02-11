@@ -62,7 +62,7 @@
         =@event.zip_code
 
       %p
-        %a{href: get_directions_link("800 Convention Center Place, Seattle WA 98101"), target: '_blank'} 
+        %a{href: get_directions_link("#{@event.street_address}, #{@event.city} #{@event.state_province} #{@event.zip_code}"), target: '_blank'} 
           Get Directions
           %i.fa.fa-angle-right
 
