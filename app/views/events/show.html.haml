@@ -52,6 +52,9 @@
       %p
         =@event.venue
         %br
+        -if @event.venue_space.present?
+          =@event.venue_space
+          %br
         =@event.street_address
         %br
         =@event.city
