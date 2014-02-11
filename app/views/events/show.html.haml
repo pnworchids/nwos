@@ -72,7 +72,7 @@
 
 .container.event-additional-information
   %section.event-description.standard-section
-    %p=@event.description
+    %p=@event.description.html_safe
 
   %section.event-vendors.standard-section
     -if @event.event_vendors.present?

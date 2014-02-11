@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :event_vendors, allow_destroy: true
   has_many :vendors, :through => :event_vendors
 
-  validates :name, :street_address, :city, :state_province, presence: true
+  validates :name, :street_address, :city, :state_province, :publish_at, presence: true
   validates :name, length: { maximum: 50 }
 
   def self.published
