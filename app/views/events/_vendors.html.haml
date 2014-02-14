@@ -1,0 +1,13 @@
+%h3.event-section-header
+  ="Vendor".pluralize(event.event_vendors.count)
+%ul
+  -event.event_vendors.each do |v|
+    %li
+      %h4.vendor-header
+        = enabled_link(v.vendor.url.present?, v.vendor.name, v.vendor.url, class: 'vendor-name', target: '_blank')
+        %br
+        %span.vendor-location=v.vendor.location
+      -if v.vendor.description.present?
+        %p.vendor-description=v.vendor.description
+      -if v.additional_info.present?
+        %p.vendor-additional=v.additional_info
