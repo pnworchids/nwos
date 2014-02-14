@@ -79,16 +79,4 @@
 
   %section.event-vendors.standard-section
     -if @event.event_vendors.present?
-      %h3.event-section-header
-        ="Vendor".pluralize(@event.event_vendors.count)
-      %ul
-        -@event.event_vendors.each do |v|
-          %li
-            %h4.vendor-header
-              =link_to v.vendor.name, v.vendor.url, class: 'vendor-name', target: '_blank'
-              %br
-              %span.vendor-location=v.vendor.location
-            -if v.vendor.description.present?
-              %p.vendor-description=v.vendor.description
-            -if v.additional_info.present?
-              %p.vendor-additional=v.additional_info
+      = render 'vendors', event: @event
