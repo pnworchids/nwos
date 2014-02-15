@@ -13,6 +13,6 @@ class ContactMessagesController < ApplicationController
   private
 
     def message_params
-      params.require(:contact_message).permit(:to, :name, :email, :phone, :subject, :body)
+      params.require(:contact_message).permit(:to, :name, :email, :subject, :body)
     end
 end
