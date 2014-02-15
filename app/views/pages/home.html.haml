@@ -1,17 +1,6 @@
 %section.home-featured
   %ul.rslides
     %li
-      =link_to event_path(1) do
-        .home-featured-bg-cover{style: "background-image: url(assets/slides/slide1.jpg)"}
-        %img.home-featured-bg{src: 'assets/slides/slide1.jpg'}
-        .home-featured-content
-          .container
-            %h2.home-featured-heading
-              50 Shades of Orchids
-            %p 
-              Join us February 5th - 9th at the Northwest Flower & Garden Show.
-
-    %li
       =link_to event_path(6) do
         .home-featured-bg-cover{style: "background-image: url(assets/slides/slide3.jpg)"}
         %img.home-featured-bg{src: 'assets/slides/slide3.jpg'}
@@ -21,6 +10,17 @@
               Want to learn more about orchids?
             %p 
               Come visit us at our next meeting.
+
+    %li
+      =link_to event_path(4) do
+        .home-featured-bg-cover{style: "background-image: url(assets/slides/repotting.jpg)"}
+        %img.home-featured-bg{src: 'assets/slides/repotting.jpg'}
+        .home-featured-content
+          .container
+            %h2.home-featured-heading
+              Hands-on Potting Clinic
+            %p 
+              Bring your plants and have an experienced grower help you repot them.
 
 .container
   %section.col-1-2.standard-section
