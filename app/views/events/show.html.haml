@@ -1,5 +1,13 @@
 -provide(:title, @event.name)
 
+-provide :opengraph do
+  %meta{ property: 'og:type', content: 'website' }
+  %meta{ property: 'og:url', content: get_url(event_path(@event)) }
+  %meta{ property: 'og:title', content: @event.name }
+  %meta{ property: 'og:image', content: get_url('/assets/facebook_share2.jpg') }
+  %meta{ property: 'og:image', content: get_url('/assets/facebook_share1.jpg') }
+  %meta{ property: 'og:description', content: "Be sure to check out the #{@event.name}!" }
+
 .page-banner
   .photo-banner
 
@@ -66,17 +74,29 @@
           Get Directions
           %i.fa.fa-angle-right
 
-  - if @event.geocode_lat.present? && @event.geocode_lng.present?
-    .container.white-box
+    - if @event.geocode_lat.present? && @event.geocode_lng.present?
       .google_map_canvas{data: {:"google-map" => true, :lat => @event.geocode_lat, :lng => @event.geocode_lng, :zoom => 14}}
         =@event.venue
 
 
+  .event-additional-information.white-box.container
+    -if @event.description.present?
+      %section.event-description.standard-section
+        %p=@event.description.html_safe
 
-.container.event-additional-information
-  %section.event-description.standard-section
-    %p=@event.description.html_safe
-
-  %section.event-vendors.standard-section
     -if @event.event_vendors.present?
-      = render 'vendors', event: @event
+      %section.event-vendors.standard-section
+        = render 'vendors', event: @event
+
+
+  .container.event-share
+    %ul.share-buttons
+      %li.col-1-2
+        %a.social-media-button.facebook{href: construct_fb_share(event_path(@event)), target: "_blank"} 
+          %i.fa.fa-facebook
+          Share on Facebook
+
+      %li.col-1-2.omega
+        %a.social-media-button.twitter{href: construct_tweet(event_path(@event), u("Be sure to check out the #{@event.name}!")), target: "_blank"} 
+          %i.fa.fa-twitter
+          Share on Twitter
