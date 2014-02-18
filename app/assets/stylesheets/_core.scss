@@ -566,3 +566,52 @@ a.button-large {
   @include ButtonLarge;
 }
 
+.share-buttons {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  list-style-type: none;
+  @include Clearfix;
+
+  li {
+    margin-bottom: 1em;
+  }
+}
+
+.social-media-button {
+  display: block;
+  font-size: 1.1em;
+  padding: 1em 1.5em;
+  border-radius: 3px;
+  @include transition(all 0.3s ease);
+
+  color: $off-white;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+
+  &:hover {
+    color: white;
+
+    &.facebook {
+      background-color: lighten(#3b5998, 5%);
+    }
+    &.twitter {
+      background-color: lighten(#00acee, 5%);
+    }
+  }
+
+  &.facebook {
+    background-color: #3b5998;
+  }
+  &.twitter {
+    background-color: #00acee;
+  }
+
+  i {
+    padding-right: 0.5em;
+    font-size: 1.6em;
+    vertical-align: middle;
+  }
+}
+
