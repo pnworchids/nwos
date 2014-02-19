@@ -6,7 +6,12 @@
   %meta{ property: 'og:title', content: @event.name }
   %meta{ property: 'og:image', content: get_url('/assets/facebook_share2.jpg') }
   %meta{ property: 'og:image', content: get_url('/assets/facebook_share1.jpg') }
-  %meta{ property: 'og:description', content: "Be sure to check out the #{@event.name}!" }
+  -if @event.facebook_share.present?
+    %meta{ property: 'og:description', content: @event.facebook_share }
+  -else
+    %meta{ property: 'og:description', content: "Be sure to check out the #{@event.name}. Visit nwos.org for more information about this event and other #orchid related events." }
+
+- @twitter_copy = @event.twitter_share.present? ? @event.twitter_share : "Be sure to check out the #{@event.name}. #orchids"
 
 .page-banner
   .photo-banner
@@ -97,6 +102,6 @@
           Share on Facebook
 
       %li.col-1-2.omega
-        %a.social-media-button.twitter{href: construct_tweet(event_path(@event), u("Be sure to check out the #{@event.name}!")), target: "_blank"} 
+        %a.social-media-button.twitter{href: construct_tweet(event_path(@event), u(@twitter_copy)), target: "_blank"}
           %i.fa.fa-twitter
           Share on Twitter
