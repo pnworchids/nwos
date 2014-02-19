@@ -38,4 +38,8 @@ class Event < ActiveRecord::Base
     self.end_datetime >= (DateTime.now.utc - 1.day)
   end
 
+  def is_published?
+    self.publish_at <= DateTime.now.utc
+  end
+
 end
