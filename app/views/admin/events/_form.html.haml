@@ -1,0 +1,23 @@
+= semantic_form_for [:admin, @event] do |f|
+  = f.inputs "Basic Information" do
+    =# f.input :admin_token, :as => :hidden, :value => true
+    = f.input :publish_at
+    = f.input :name
+    = f.input :description
+    = f.input :admission_info
+
+  = f.inputs "Location" do
+    = f.input :venue
+    = f.input :venue_space
+    = f.input :street_address
+    = f.input :city
+    = f.input :state_province
+    = f.input :zip_code
+    = f.input :geocode_lat
+    = f.input :geocode_lng
+
+  = f.inputs "Sharing" do
+    = f.input :facebook_share
+    = f.input :twitter_share
+
+  = f.actions
