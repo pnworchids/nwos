@@ -46,94 +46,95 @@
       / ga('send', 'pageview');
 
 %body{class: get_body_class}
-  %header.header
-    .navbar.container
-      .navbar-header
-        .container
-          = link_to root_path do
-            %h1.navbar-logo Northwest Orchid Society
-          %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
-            %i.fa.fa-bars.fa-lg
-      .navbar-collapse.collapse
-        %nav
-          %ul.main-nav
-            %li
-              =link_to "Events", events_path, class: active_if(controller: 'events')
-            %li
-              =link_to "Members", membership_path, class: active_if(action: 'membership')
-            %li
-              =link_to "About", about_path, class: active_if(action: 'about')
-            %li
-              =link_to "Contact", contact_path, class: active_if(action: 'contact')
+  .sticky-footer-container
+    %header.header
+      .navbar.container
+        .navbar-header
+          .container
+            = link_to root_path do
+              %h1.navbar-logo Northwest Orchid Society
+            %button.navbar-toggle{type: 'button', data: {toggle: "collapse", target: ".navbar-collapse"}}
+              %i.fa.fa-bars.fa-lg
+        .navbar-collapse.collapse
+          %nav
+            %ul.main-nav
+              %li
+                =link_to "Events", events_path, class: active_if(controller: 'events')
+              %li
+                =link_to "Members", membership_path, class: active_if(action: 'membership')
+              %li
+                =link_to "About", about_path, class: active_if(action: 'about')
+              %li
+                =link_to "Contact", contact_path, class: active_if(action: 'contact')
 
-  .main 
-    = yield
+    %main.main{role: 'main'} 
+      = yield
 
-  %footer.footer
-    .container
-      %ul#site-map
-        %li.site-map-col
-          %ul
-            %li
-              =link_to "Events", events_path
-            %li
-              =link_to "Sales", events_category_path(2)
-            %li
-              =link_to "Judged Shows", events_category_path(1)
-        %li.site-map-col
-          %ul
-            %li
-              =link_to "Members", membership_path
-            %li
-              %a{href: "http://newsletter.nwos.org/"} Newsletter
-            %li
-              =link_to "Become a Member", membership_path(anchor: 'join-now')
-        %li.site-map-col
-          %ul
-            %li
-              =link_to "About", about_path
-            %li
-              =link_to "The Society", about_path(anchor: 'the-society')
-            %li
-              =link_to "Scholarship", about_path(anchor: 'scholarship')
-        %li.site-map-contact
-          %ul
-            %li
-              =link_to "Contact", contact_path
-            %li.site-map-col
-              %a.footer-email{href: "mailto:nwos@nwos.org"} nwos@nwos.org
-              %br
-              %a.footer-phone{href: "http://tel:+2067815805"} (206) 781-5805
-            %li.site-map-col
-              PO Box 51021
-              %br
-              Seattle, WA 98115-1021
-            %li.site-map-col
-              UW Botantic Gardens
-              %br
-              Center for Urban Horticulture
-              %br
-              3501 NE 41st Street
-              %br
-              Seattle, WA 98105
+    %footer.footer
+      .container
+        %ul#site-map
+          %li.site-map-col
+            %ul
+              %li
+                =link_to "Events", events_path
+              %li
+                =link_to "Sales", events_category_path(2)
+              %li
+                =link_to "Judged Shows", events_category_path(1)
+          %li.site-map-col
+            %ul
+              %li
+                =link_to "Members", membership_path
+              %li
+                %a{href: "http://newsletter.nwos.org/"} Newsletter
+              %li
+                =link_to "Become a Member", membership_path(anchor: 'join-now')
+          %li.site-map-col
+            %ul
+              %li
+                =link_to "About", about_path
+              %li
+                =link_to "The Society", about_path(anchor: 'the-society')
+              %li
+                =link_to "Scholarship", about_path(anchor: 'scholarship')
+          %li.site-map-contact
+            %ul
+              %li
+                =link_to "Contact", contact_path
+              %li.site-map-col
+                %a.footer-email{href: "mailto:nwos@nwos.org"} nwos@nwos.org
+                %br
+                %a.footer-phone{href: "http://tel:+2067815805"} (206) 781-5805
+              %li.site-map-col
+                PO Box 51021
+                %br
+                Seattle, WA 98115-1021
+              %li.site-map-col
+                UW Botantic Gardens
+                %br
+                Center for Urban Horticulture
+                %br
+                3501 NE 41st Street
+                %br
+                Seattle, WA 98105
 
-      .footer-aside
-        %a.donate-link.button{ href: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9UTLJCEXA725E', target: '_blank'} Donate
+        .footer-aside
+          %a.donate-link.button{ href: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9UTLJCEXA725E', target: '_blank'} Donate
 
-        %ul.social-media-nav
-          %li
-            %a{href: "https://www.facebook.com/nworchidsociety"}
-              %span.fa-stack.fa-lg
-                %i.fa.fa-circle.fa-stack-2x.background-icon
-                %i.fa.fa-facebook.fa-stack-1x.foreground-icon
-              %span.visuallyhidden facebook
-          %li
-            %a{href: "https://twitter.com/nworchidsociety"}
-              %span.fa-stack.fa-lg
-                %i.fa.fa-circle.fa-stack-2x.background-icon
-                %i.fa.fa-twitter.fa-stack-1x.foreground-icon
-              %span.visuallyhidden Twitter
+          %ul.social-media-nav
+            %li
+              %a{href: "https://www.facebook.com/nworchidsociety"}
+                %span.fa-stack.fa-lg
+                  %i.fa.fa-circle.fa-stack-2x.background-icon
+                  %i.fa.fa-facebook.fa-stack-1x.foreground-icon
+                %span.visuallyhidden facebook
+            %li
+              %a{href: "https://twitter.com/nworchidsociety"}
+                %span.fa-stack.fa-lg
+                  %i.fa.fa-circle.fa-stack-2x.background-icon
+                  %i.fa.fa-twitter.fa-stack-1x.foreground-icon
+                %span.visuallyhidden Twitter
 
-        %p.copyright
-          &copy; 2014 Northwest Orchid Society
+          %p.copyright
+            &copy; 2014 Northwest Orchid Society
 
