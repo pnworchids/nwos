@@ -21,6 +21,14 @@ a {
   }
 }
 
+.sticky-footer-container {
+  // for sticky footer
+  // see http://www.joshrcook.com/a-responsive-sticky-footer/
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
 .main {
   @include font-smoothing;
 }
@@ -237,6 +245,11 @@ header.header {
 footer.footer {
   background-color: $deep-magenta;
   color: $gray-dark;
+
+  // for sticky footer
+  // see http://www.joshrcook.com/a-responsive-sticky-footer/
+  display: table-row;
+  height: 1px;
 
   .container {
     @include font-smoothing;
