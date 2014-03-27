@@ -1,6 +1,17 @@
 %section.home-featured
   %ul.rslides
     %li
+      =link_to event_path(8) do
+        .home-featured-bg-cover{style: "background-image: url(assets/slides/slide2.jpg)"}
+        %img.home-featured-bg{src: 'assets/slides/slide2.jpg'}
+        .home-featured-content
+          .container
+            %h2.home-featured-heading
+              Spokane Orchid Society Show & Sale
+            %p 
+              Join us for the annual Spokane orchid show.
+
+    %li
       =link_to event_path(6) do
         .home-featured-bg-cover{style: "background-image: url(assets/slides/slide3.jpg)"}
         %img.home-featured-bg{src: 'assets/slides/slide3.jpg'}
@@ -10,17 +21,6 @@
               Want to learn more about orchids?
             %p 
               Come visit us at our next meeting.
-
-    %li
-      =link_to event_path(4) do
-        .home-featured-bg-cover{style: "background-image: url(assets/slides/repotting.jpg)"}
-        %img.home-featured-bg{src: 'assets/slides/repotting.jpg'}
-        .home-featured-content
-          .container
-            %h2.home-featured-heading
-              Hands-on Potting Clinic
-            %p 
-              Re-pot your orchids with the help of an experienced grower.
 
 .container
   %section.col-1-2.standard-section
