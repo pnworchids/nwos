@@ -484,6 +484,16 @@ footer.footer {
       border-bottom: 1px dotted $blue-light;
     }
   }
+
+  ul {
+    padding: 0 0 0 1.2em;
+    margin: 1.8em 0;
+
+    li {
+      line-height: 1.7;
+      margin-bottom: 1em;
+    }
+  }
 }
 
 .contrast-box {
