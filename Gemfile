@@ -16,6 +16,8 @@ gem 'tzinfo'                                         # For handling timezones an
 gem 'active_attr'                                    # What ActiveModel left out
 gem 'font-awesome-rails'                             # For using "Font Awesome" icon fonts
 gem 'mandrill-api'                                   # For sending mail
+gem "rmagick"                                        # Used by carrierwave to process images
+gem "carrierwave"                                    # For uploading files to the S3 bucket
 
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'

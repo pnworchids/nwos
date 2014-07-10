@@ -18,6 +18,7 @@
 
 # Ignore sensitive files
 .env
+/config/secret.yml
 
 # Ignore other unneeded files
 ._*
