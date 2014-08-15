@@ -22,6 +22,10 @@ class Event < ActiveRecord::Base
     # instead of selecting recent dates, just select them all reguardless and run a regular rake task to delete old ones.
   end
 
+  def self.upcoming
+    published.joins(:event_dates).includes(:event_dates).where("event_dates.starts_at > ?", DateTime.now)
+  end
+
   def ordered_dates
     EventDate.where(event_id: self.id).order(:starts_at)
   end

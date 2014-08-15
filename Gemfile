@@ -18,6 +18,7 @@ gem 'font-awesome-rails'                             # For using "Font Awesome" 
 gem 'mandrill-api'                                   # For sending mail
 gem "rmagick"                                        # Used by carrierwave to process images
 gem "carrierwave"                                    # For uploading files to the S3 bucket
+gem "fog"                                           # For uploading to AWS using carrierwave
 
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'

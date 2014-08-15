@@ -1,15 +1,32 @@
 %section.home-featured
   %ul.rslides
-    %li
-      =link_to event_path(12) do
-        .home-featured-bg-cover{style: "background-image: url(assets/slides/slide3.jpg)"}
-        %img.home-featured-bg{src: 'assets/slides/slide3.jpg'}
-        .home-featured-content
-          .container
-            %h2.home-featured-heading 
-              Want to learn more about orchids?
-            %p 
-              Come visit us at our next meeting.
+    - if @featured.present?
+      - @featured.each_with_index do |slide, i|
+        %li
+          =link_to slide.http_link do
+            -@image = slide.image_url.present? ? slide.image_url : "assets/slides/slide#{i+1}.jpg"
+
+            .home-featured-bg-cover{style: "background-image: url(#{@image})"}
+
+            %img.home-featured-bg{src: @image}
+            .home-featured-content
+              .container
+                %h2.home-featured-heading 
+                  =slide.title
+                %p 
+                  =slide.description
+    - else
+      %li
+        =link_to events_path do
+          .home-featured-bg-cover{style: "background-image: url(assets/slides/slide1.jpg)"}
+
+          %img.home-featured-bg{src: "assets/slides/slide1.jpg"}
+          .home-featured-content
+            .container
+              %h2.home-featured-heading 
+                What to learn more about orchids?
+              %p 
+                Come visit us at our next meeting.
 
 .container
   %section.col-1-2.standard-section
