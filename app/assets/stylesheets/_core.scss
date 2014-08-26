@@ -398,7 +398,6 @@ footer.footer {
 
 .page-header {
   font-size: 2em;
-  margin-top: 2em;
   margin-bottom: 0.5em;
   color: $magenta-dark;
 
@@ -523,7 +522,11 @@ footer.footer {
  */
 
 .page-banner {
-  margin-bottom: 3.6em;
+  margin-bottom: 2em;
+
+  @include media(desktop) {
+    margin-bottom: 3.6em;
+  }
 
   .photo-banner {
     height: 65px;
@@ -535,7 +538,6 @@ footer.footer {
 ul.tags {
   list-style-type: none;
   padding: 0;
-  margin: 1em 0 2em;
   @include Clearfix;
 
   li {

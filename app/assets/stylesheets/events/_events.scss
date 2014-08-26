@@ -27,7 +27,7 @@
   .events-filters {
     list-style-type: none;
     padding: 0;
-    margin: 0 0 2.5em;
+    margin: 0;
     @include Clearfix;
 
     li {
@@ -76,6 +76,12 @@
 
       &:first-child {
         border-top: 0;
+      }
+    }
+
+    .event-date {
+      @include media(mobile-tablet) {
+        margin-bottom: 0.5em;
       }
     }
 
@@ -135,15 +141,39 @@
 
 .events-show {
 
+  .tags-container {
+    @include media(desktop-tablet) {
+      min-height: 2em;
+    }
+  }
+
   .event-information {
     font-size: 0.9em;
     padding-top: 1em;
     line-height: 1.7;
 
+    @include media(mobile-only) {
+      padding: 0;
+    }
+
     .table-header {
       font-size: 1em;
       text-transform: uppercase;
       color: $text-gray;
+
+      @include media(mobile-only) {
+        background-color: $white-dark;
+        margin: 0;
+        padding: 1em 16px;
+      }
+    }
+
+    .table-content {
+
+      @include media(mobile-only) {
+        padding: 0 16px;
+      }
+
     }
 
     .event-hours {
@@ -158,17 +188,37 @@
     }
 
     .location-header {
-      margin-bottom: 2em;
+      //margin-bottom: 2em;
     }
 
     a:hover, a:active {
       border-bottom: 1px dotted $blue-light;
+    }
+
+    .col-1-2 {
+      @include media(mobile-tablet) {
+        width: auto;
+        float: none;
+      }
+    }
+  }
+
+  .map-container {
+    padding-top: 1.2em;
+
+    @include media(mobile-only) {
+      padding-left: 16px;
+      padding-right: 16px;
     }
   }
 
   .google_map_canvas {
     width: 100%;
     height: 300px;
+
+    @include media(desktop) {
+      height: 400px;
+    }
   }
 
 /*
