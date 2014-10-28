@@ -93,6 +93,9 @@
       %section.event-description.standard-section
         %p=@event.description.html_safe
 
+    -if @event.additional_info.present?
+      =@event.additional_info.html_safe
+
     -if @event.event_vendors.present?
       %section.event-vendors.standard-section
         = render 'vendors', event: @event

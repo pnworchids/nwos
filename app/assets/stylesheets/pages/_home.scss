@@ -2,11 +2,11 @@
   position: relative;
   background-color: $onyx-dark;
 
-  @include media(mobile-only) {
-    margin-bottom: 5em;
+  @include media(mobile-tablet) {
+    margin-bottom: 3.5em;
   }
 
-  @include media(desktop-tablet) {
+  @include media(desktop) {
     margin-bottom: 6em;
   }
 

@@ -239,7 +239,7 @@
     }
 
     .standard-section {
-      margin-bottom: 2.5em;
+      margin-bottom: 3.5em;
     }
   }
 
@@ -251,6 +251,17 @@
     font-size: 1.6em;
     margin: 0 0 0.5em;
     color: $magenta-dark;
+  }
+
+  .event-additional {
+    h4 {
+      margin: 1.5em 0 1em;
+    }
+    .file-list {
+      li {
+        margin: 0;
+      }
+    }
   }
 
 /*

@@ -1,7 +1,7 @@
 ActiveAdmin.register Event do
 
   permit_params :name, :venue, :venue_space, :street_address, :city, :state_province, :zip_code, :publish_at,
-    :geocode_lat, :geocode_lng, :admission_info, :description, :twitter_share, :facebook_share,
+    :geocode_lat, :geocode_lng, :admission_info, :description, :twitter_share, :facebook_share, :additional_info,
     tags_attributes: [:id, :starts_at, :ends_at, :_destroy]
 
   # See permitted parameters documentation:
@@ -104,8 +104,8 @@ ActiveAdmin.register Event do
           span event.publish_at
         end
         row :name
-        row :description
         row :admission_info
+        row :description
       end
     end
 
@@ -119,6 +119,12 @@ ActiveAdmin.register Event do
         row :zip_code
         row :geocode_lat
         row :geocode_lng
+      end
+    end
+
+    panel "Additional" do
+      attributes_table_for event do
+        row :additional_info
       end
     end
 

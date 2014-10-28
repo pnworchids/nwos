@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710051339) do
+ActiveRecord::Schema.define(version: 20141028033151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20140710051339) do
     t.string   "venue_space"
     t.string   "twitter_share"
     t.string   "facebook_share"
+    t.text     "additional_info"
   end
 
   create_table "featured_blocks", force: true do |t|
