@@ -429,6 +429,14 @@ footer.footer {
 .section-header {
   font-size: 2em;
   color: $magenta-dark;
+
+  a {
+    color: $magenta-dark;
+
+    &:hover {
+      color: $magenta-light;
+    }
+  }
 }
 
 .section-secondary-header {

@@ -15,6 +15,18 @@
                   =slide.title
                 %p 
                   =slide.description
+
+      %li
+        =link_to events_path do
+          .home-featured-bg-cover{style: "background-image: url(assets/slides/slide1.jpg)"}
+
+          %img.home-featured-bg{src: "assets/slides/slide1.jpg"}
+          .home-featured-content
+            .container
+              %h2.home-featured-heading 
+                What to learn more about orchids?
+              %p 
+                Come visit us at our next meeting.
     - else
       %li
         =link_to events_path do
@@ -30,13 +42,15 @@
 
 .container
   %section.col-1-2.standard-section
-    %h2.section-header Newsletter
+    %h2.section-header 
+      =link_to "Newsletter", "http://newsletter.nwos.org"
     %p 
       For a recap of last month's meeting and information about upcoming events, check out the latest edition of our
       =link_to "monthly newsletter.", "http://newsletter.nwos.org"
 
   %section.col-1-2.omega.standard-section
-    %h2.section-header Join Us
+    %h2.section-header 
+      =link_to "Join Us", membership_path
     %p 
       Become a member of NWOS and learn how to get the most out of your orchids. We are a diverse community and welcome all levels of experience.
       =link_to "Sign up now.", membership_path 
